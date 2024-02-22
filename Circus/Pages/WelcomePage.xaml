@@ -1,0 +1,63 @@
+﻿<Page x:Class="Circus.Pages.WelcomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Circus.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="WelcomePage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Image Source = "/Images/clown.png" 
+            MaxHeight="500"
+            Grid.Column="1"
+            Grid.ColumnSpan="4"
+            Grid.Row="2"
+            Grid.RowSpan="5"/>
+        <Border Background="#008500"
+            MaxWidth="1920"
+            MaxHeight="80"
+            CornerRadius="0, 0, 50, 50"
+            Grid.Column="0"
+            Grid.ColumnSpan="6"
+            Grid.Row="0"
+            Grid.RowSpan="1"/>
+        <Button Content="ДОБРО ПОЖАЛОВАТЬ"
+            x:Name="EnterBTN"
+            Grid.Column="0"
+            Grid.ColumnSpan="6"
+            Grid.Row="7"
+            Grid.RowSpan ="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="450"
+            Height="70"
+            Background="#A60000"
+            Foreground="White"
+            FontFamily="Courier New"
+            FontSize="40"
+            Click="EnterBTN_Click"/>
+    </Grid>
+</Page>
