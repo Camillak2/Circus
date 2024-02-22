@@ -12,27 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Circus.Pages;
+using Circus.DB;
 
-namespace Circus.Pages
+namespace Circus.Windowsss
 {
     /// <summary>
-    /// Логика взаимодействия для MainMenuPageForArtist.xaml
+    /// Логика взаимодействия для AddWorkerWindow.xaml
     /// </summary>
-    public partial class MainMenuPageForArtist : Page
+    public partial class AddWorkerWindow : Page
     {
-        public MainMenuPageForArtist()
+        public AddWorkerWindow()
         {
             InitializeComponent();
-        }
-
-        private void TimetableBTN_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new TimetablePage());
-        }
-
-        private void BackBTN_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.GoBack();
         }
     }
 }

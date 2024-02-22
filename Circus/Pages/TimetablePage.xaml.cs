@@ -16,23 +16,19 @@ using System.Windows.Shapes;
 namespace Circus.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainMenuPageForArtist.xaml
+    /// Логика взаимодействия для TimetablePage.xaml
     /// </summary>
-    public partial class MainMenuPageForArtist : Page
+    public partial class TimetablePage : Page
     {
-        public MainMenuPageForArtist()
+        public TimetablePage()
         {
             InitializeComponent();
-        }
-
-        private void TimetableBTN_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new TimetablePage());
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
+
     }
 }

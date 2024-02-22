@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Circus.Windowsss;
+using MaterialDesignThemes.Wpf;
+using Circus.DB;
 
 namespace Circus.Pages
 {
@@ -20,9 +23,69 @@ namespace Circus.Pages
     /// </summary>
     public partial class AllWorkersPage : Page
     {
+        public static List<Worker> workers { get; set; }
+        public static Worker loggedWorker;
+
         public AllWorkersPage()
         {
             InitializeComponent();
+        }
+
+        private void Refresh()
+        {
+            WorkersLV.ItemsSource = DBConnection.circusDB.Worker.ToList();
+        }
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void EditWorkerBTN_Click(object sender, RoutedEventArgs e)
+        {
+            if (WorkersLV.SelectedItem is Worker)
+            {
+                DBConnection.selectedForEditWorker = WorkersLV.SelectedItem as Worker;
+                EditWorkerWindow editWorkerWindow = new EditWorkerWindow();
+                editWorkerWindow.ShowDialog();
+            }
+            Refresh();
+        }
+
+        private void AddWorkerBTN_Click(object sender, RoutedEventArgs e)
+        {
+            if (WorkersLV.SelectedItem is Worker)
+            {
+                DBConnection.selectedForEditWorker = WorkersLV.SelectedItem as Worker;
+                AddWorkerWindow addWorkerWindow = new AddWorkerWindow();
+                addWorkerWindow.ShowDialog();
+            }
+            Refresh();
+        }
+
+        private void DeleteWorkerBTN_Click(object sender, RoutedEventArgs e)
+        {
+            if (WorkersLV.SelectedItem is Worker work)
+            {
+                DBConnection.circusDB.Worker.Remove(work);
+                DBConnection.circusDB.SaveChanges();
+            }
+            Refresh();
+        }
+
+        private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (SearchTB.Text.Length > 0)
+
+                WorkersLV.ItemsSource = DBConnection.circusDB.Worker.Where(i => i.Surname.ToLower().StartsWith(SearchTB.Text.Trim().ToLower())
+                || i.Name.ToLower().StartsWith(SearchTB.Text.Trim().ToLower()) || i.Patronymic.ToLower().StartsWith(SearchTB.Text.Trim().ToLower())).ToList();
+
+            else
+                WorkersLV.ItemsSource = new List<Worker>(DBConnection.circusDB.Worker.ToList());
+        }
+
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }
