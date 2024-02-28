@@ -29,6 +29,10 @@ namespace Circus.Pages
         public AllWorkersPage()
         {
             InitializeComponent();
+            loggedWorker = DBConnection.loginedWorker;
+            workers = DBConnection.circusDB.Worker.ToList();
+            this.DataContext = this;
+            Refresh();
         }
 
         private void Refresh()
@@ -53,13 +57,8 @@ namespace Circus.Pages
 
         private void AddWorkerBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (WorkersLV.SelectedItem is Worker)
-            {
-                DBConnection.selectedForEditWorker = WorkersLV.SelectedItem as Worker;
-                AddWorkerWindow addWorkerWindow = new AddWorkerWindow();
-                //addWorkerWindow.ShowDialog();
-            }
-            Refresh();
+            AddWorkerWindow addWorkerWindow = new AddWorkerWindow();
+            addWorkerWindow.ShowDialog();
         }
 
         private void DeleteWorkerBTN_Click(object sender, RoutedEventArgs e)
