@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f15be93171f847ff9d628eb2ab86fae8" Name="Diagram1">
+      <Diagram DiagramId="2e2e4034006d480b894257cf93d751e1" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="Circus_SagdievaModel.Animal" Width="1.5" PointX="13" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.AnimalType" Width="1.5" PointX="10.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Application" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
@@ -32,7 +32,13 @@
         <AssociationConnector Association="Circus_SagdievaModel.FK_Report1_Month" ManuallyRouted="false" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Report2_Month" ManuallyRouted="false" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Perfomance_PerfomanceType" ManuallyRouted="false" />
-        <AssociationConnector Association="Circus_SagdievaModel.FK_Perfomance_Report2_Perfomance" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_SagdievaModel.FK_Perfomance_Report2_Perfomance" ManuallyRouted="true" >
+          <ConnectorPoint PointX="7.5" PointY="10.992310634114585" />
+          <ConnectorPoint PointX="8.5725" PointY="10.992310634114585" />
+          <ConnectorPoint PointX="8.5725" PointY="12.708332557231181" />
+          <ConnectorPoint PointX="14" PointY="12.708332557231181" />
+          <ConnectorPoint PointX="14" PointY="11.855286458333335" />
+        </AssociationConnector>
         <AssociationConnector Association="Circus_SagdievaModel.FK_Timetable_Perfomance" ManuallyRouted="false" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Perfomance_Report2_Report2" ManuallyRouted="false" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Worker_To_Position" ManuallyRouted="false" />

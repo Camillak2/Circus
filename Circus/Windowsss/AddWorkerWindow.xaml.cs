@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Circus.Pages;
 using Circus.DB;
+using Microsoft.Win32;
+using System.IO;
 
 namespace Circus.Windowsss
 {
@@ -22,9 +24,75 @@ namespace Circus.Windowsss
     /// </summary>
     public partial class AddWorkerWindow : Page
     {
+        public static List<Worker> workers { get; set; }
+        public static List<Position> positions { get; set; }
+        public static Worker worker = new Worker();
         public AddWorkerWindow()
         {
             InitializeComponent();
+            workers = DBConnection.circusDB.Worker.ToList();
+            positions = DBConnection.circusDB.Position.ToList();
+            this.DataContext = this;
+        }
+
+        private void AddWorkerBTN_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                StringBuilder error = new StringBuilder();
+                if (string.IsNullOrWhiteSpace(SurnameTB.Text) || string.IsNullOrWhiteSpace(NameTB.Text) || string.IsNullOrWhiteSpace(PatronymicTB.Text) ||
+                        DateOfBirthDP.SelectedDate == null || string.IsNullOrWhiteSpace(PhoneTB.Text) ||
+                        string.IsNullOrWhiteSpace(EmailTB.Text) || string.IsNullOrWhiteSpace(PasswordTB.Text))
+                {
+                    error.AppendLine("Заполните все поля!");
+                }
+                if (DateOfBirthDP.SelectedDate != null && (DateTime.Now - (DateTime)DateOfBirthDP.SelectedDate).TotalDays < 365 * 18 + 4)
+                {
+                    error.AppendLine("Сотрудник не может быть младше 18 лет.");
+                }
+                if (error.Length > 0)
+                {
+                    MessageBox.Show(error.ToString());
+                }
+                else
+                {
+                    worker.Surname = SurnameTB.Text.Trim();
+                    worker.Name = NameTB.Text.Trim();
+                    worker.Patronymic = PatronymicTB.Text.Trim();
+                    worker.Phone = PhoneTB.Text.Trim();
+                    worker.DateOfBirth = DateOfBirthDP.SelectedDate;
+                    worker.Login = EmailTB.Text.Trim();
+                    worker.Password = PasswordTB.Text.Trim();
+                    var a = PositionCB.SelectedItem as Position;
+                    worker.ID_Position = a.ID;
+
+                    DBConnection.circusDB.Worker.Add(worker);
+                    DBConnection.circusDB.SaveChanges();
+                    NavigationService.Navigate(new AllWorkersPage());
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Заполните все поля!");
+            }
+        }
+
+        private void AddPhotoBTN_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog()
+            {
+                Filter = "*.png|*.png|*.jpeg|*.jpeg|*.jpg|*.jpg"
+            };
+            if (openFileDialog.ShowDialog().GetValueOrDefault())
+            {
+                worker.Photo = File.ReadAllBytes(openFileDialog.FileName);
+                PhotoWorker.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+            }
+        }
+
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        {
+            //Close();
         }
     }
 }

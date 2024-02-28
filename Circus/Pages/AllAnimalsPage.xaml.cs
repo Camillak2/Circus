@@ -24,5 +24,20 @@ namespace Circus.Pages
         {
             InitializeComponent();
         }
+
+        private void EditAnimalBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddAnimalBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteAnimalBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

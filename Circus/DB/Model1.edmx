@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Circus_SagdievaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище Circus_SagdievaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Animal">
           <Key>
             <PropertyRef Name="ID" />
@@ -157,6 +157,7 @@
           <Property Name="ID" Type="int" />
           <Property Name="ID_ServiceStaff" Type="int" />
           <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="DoneOrNo" Type="bit" />
         </EntityType>-->
         <EntityType Name="Timetable">
           <Key>
@@ -188,8 +189,8 @@
           <Property Name="ID_Gender" Type="int" Nullable="false" />
           <Property Name="Phone" Type="nvarchar" MaxLength="11" />
           <Property Name="ID_TypeOfArtist" Type="int" />
-          <Property Name="login" Type="nvarchar" MaxLength="50" />
-          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="Photo" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_Animal_AnimalType">
@@ -448,8 +449,7 @@
             <End Role="Worker" EntitySet="Worker" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Circus_SagdievaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -639,8 +639,8 @@
           <Property Name="ID_Gender" Type="Int32" Nullable="false" />
           <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="ID_TypeOfArtist" Type="Int32" />
-          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Application" Relationship="Self.FK_Application_Worker" FromRole="Worker" ToRole="Application" />
           <NavigationProperty Name="Cabinet" Relationship="Self.FK_Cabinet_Worker" FromRole="Worker" ToRole="Cabinet" />
@@ -1083,8 +1083,8 @@
                 <ScalarProperty Name="ID_Gender" ColumnName="ID_Gender" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="ID_TypeOfArtist" ColumnName="ID_TypeOfArtist" />
-                <ScalarProperty Name="login" ColumnName="login" />
-                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
               </MappingFragment>
             </EntityTypeMapping>

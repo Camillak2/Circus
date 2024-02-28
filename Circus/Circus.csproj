@@ -190,8 +190,14 @@
     <Compile Include="Pages\WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windowsss\AddAnimalWindow.xaml.cs">
+      <DependentUpon>AddAnimalWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windowsss\AddWorkerWindow.xaml.cs">
       <DependentUpon>AddWorkerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windowsss\EditAnimalWindow.xaml.cs">
+      <DependentUpon>EditAnimalWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windowsss\EditWorkerWindow.xaml.cs">
       <DependentUpon>EditWorkerWindow.xaml</DependentUpon>
@@ -257,7 +263,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windowsss\AddAnimalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windowsss\AddWorkerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windowsss\EditAnimalWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
