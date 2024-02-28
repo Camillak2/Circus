@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="80b15cd99c5244ebbbf302d0c784324d" Name="Diagram1">
+      <Diagram DiagramId="471cf8c0dfb24ca9bda4ef4d1add150d" Name="Diagram1">
         <EntityTypeShape EntityType="Circus_SagdievaModel.Animal" Width="1.5" PointX="13" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.AnimalType" Width="1.5" PointX="10.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Application" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
