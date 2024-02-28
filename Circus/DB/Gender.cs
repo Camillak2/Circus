@@ -7,31 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Circus
+namespace Circus.DB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Animal
+    public partial class Gender
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Animal()
+        public Gender()
         {
-            this.Cage = new HashSet<Cage>();
+            this.Worker = new HashSet<Worker>();
         }
     
         public int ID { get; set; }
         public string Name { get; set; }
-        public Nullable<int> ID_Type { get; set; }
-        public Nullable<int> Age { get; set; }
-        public string Gender { get; set; }
-        public Nullable<int> Weight { get; set; }
-        public string FoodPreference { get; set; }
-        public string CareRecommendations { get; set; }
-        public Nullable<int> ID_Trainer { get; set; }
     
-        public virtual AnimalType AnimalType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cage> Cage { get; set; }
+        public virtual ICollection<Worker> Worker { get; set; }
     }
 }

@@ -7,23 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Circus
+namespace Circus.DB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class AnimalType
+    public partial class Perfomance
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AnimalType()
+        public Perfomance()
         {
-            this.Animal = new HashSet<Animal>();
+            this.Perfomance_Report2 = new HashSet<Perfomance_Report2>();
+            this.Timetable = new HashSet<Timetable>();
         }
     
         public int ID { get; set; }
-        public string Type { get; set; }
+        public string Name { get; set; }
+        public Nullable<int> ID_Type { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
     
+        public virtual PerfomanceType PerfomanceType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Animal> Animal { get; set; }
+        public virtual ICollection<Perfomance_Report2> Perfomance_Report2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Timetable> Timetable { get; set; }
     }
 }

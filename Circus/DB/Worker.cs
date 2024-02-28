@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Circus
+namespace Circus.DB
 {
     using System;
     using System.Collections.Generic;

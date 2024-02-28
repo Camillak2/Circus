@@ -7,17 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Circus
+namespace Circus.DB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Application
+    public partial class DressingRoom
     {
         public int ID { get; set; }
-        public Nullable<int> ID_Artist { get; set; }
-        public string Comment { get; set; }
-    
-        public virtual Worker Worker { get; set; }
     }
 }

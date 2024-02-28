@@ -57,7 +57,7 @@ namespace Circus.Pages
             {
                 DBConnection.selectedForEditWorker = WorkersLV.SelectedItem as Worker;
                 AddWorkerWindow addWorkerWindow = new AddWorkerWindow();
-                addWorkerWindow.ShowDialog();
+                //addWorkerWindow.ShowDialog();
             }
             Refresh();
         }

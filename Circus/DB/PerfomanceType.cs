@@ -7,13 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Circus
+namespace Circus.DB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class DressingRoom
+    public partial class PerfomanceType
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PerfomanceType()
+        {
+            this.Perfomance = new HashSet<Perfomance>();
+        }
+    
         public int ID { get; set; }
+        public string Name { get; set; }
+        public Nullable<decimal> Prepayment { get; set; }
+        public string Company { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Perfomance> Perfomance { get; set; }
     }
 }

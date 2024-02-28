@@ -7,18 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Circus
+namespace Circus.DB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Perfomance_Report2
+    public partial class sysdiagrams
     {
-        public int ID { get; set; }
-        public Nullable<int> ID_Perfomance { get; set; }
-        public Nullable<int> ID_Report2 { get; set; }
-    
-        public virtual Perfomance Perfomance { get; set; }
-        public virtual Report2 Report2 { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

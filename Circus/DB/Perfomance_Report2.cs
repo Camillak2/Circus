@@ -7,20 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Circus
+namespace Circus.DB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Report1
+    public partial class Perfomance_Report2
     {
         public int ID { get; set; }
-        public Nullable<decimal> Profit { get; set; }
-        public Nullable<decimal> Expenses { get; set; }
-        public string ID_Type { get; set; }
-        public Nullable<int> ID_Month { get; set; }
-        public Nullable<int> Year { get; set; }
+        public Nullable<int> ID_Perfomance { get; set; }
+        public Nullable<int> ID_Report2 { get; set; }
     
-        public virtual Month Month { get; set; }
+        public virtual Perfomance Perfomance { get; set; }
+        public virtual Report2 Report2 { get; set; }
     }
 }
