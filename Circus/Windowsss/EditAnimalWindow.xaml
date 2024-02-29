@@ -180,7 +180,7 @@
     Width="400"
     Height="45"
     Click="SaveBTN_Click"
-    Background="#FF28729C"
+    Background="#008500"
     Foreground="White"/>
         <Button x:Name="BackBTN"      
     Grid.Column="3"
@@ -190,7 +190,7 @@
     Content="Назад"
     Height="45"
     Click="BackBTN_Click"
-    Background="#FF28729C"
+    Background="#008500"
     Foreground="White"/>
     </Grid>
 </Window>

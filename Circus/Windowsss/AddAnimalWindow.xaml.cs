@@ -30,7 +30,7 @@ namespace Circus.Windowsss
         {
             InitializeComponent();
             animals = DBConnection.circusDB.Animal.ToList();
-            trainers = DBConnection.circusDB.Worker.ToList();
+            trainers = DBConnection.circusDB.Worker.FirstOrDefault(i => i.ID_Position == 3).ToList();
             animalTypes = DBConnection.circusDB.AnimalType.ToList();
             genders = DBConnection.circusDB.Gender.ToList();
             this.DataContext = this;

@@ -172,7 +172,7 @@
     Width="400"
     Height="40"
     Click="AddPhotoBTN_Click"
-    Background="#FF28729C"
+    Background="#008500"
     Foreground="White"/>
 
         <Button x:Name="AddWorkerBTN"
@@ -183,7 +183,7 @@
     Width="400"
     Height="45"
     Click="AddWorkerBTN_Click"
-    Background="#FF28729C"
+    Background="#008500"
     Foreground="White"/>
 
         <Button x:Name="BackBTN"      
@@ -194,7 +194,7 @@
     Content="Назад"
     Height="45"
     Click="BackBTN_Click"
-    Background="#FF28729C"
+    Background="#008500"
     Foreground="White"/>
     </Grid>
 </Window>

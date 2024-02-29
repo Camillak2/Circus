@@ -62,7 +62,7 @@
             Height="40"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            ItemsSource="{Binding typesOfAnimal}">
+            ItemsSource="{Binding animalTypes}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}"/>
@@ -114,10 +114,13 @@
             ItemsSource="{Binding trainers}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Surname}"/>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Surname}"/>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding Patronymic}"/>
+                    </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
-
         </ComboBox>
         <TextBlock Grid.Row="1"
             Grid.Column="5"
@@ -133,7 +136,7 @@
             Height="40"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            ItemsSource="{Binding typesOfAnimal}">
+            ItemsSource="{Binding genders}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}"/>
@@ -180,7 +183,7 @@
             Width="400"
             Height="45"
             Click="AddAnimalBTN_Click"
-            Background="#FF28729C"
+            Background="#008500"
             Foreground="White"/>
         <Button x:Name="BackBTN"      
             Grid.Column="3"
@@ -190,7 +193,7 @@
             Content="Назад"
             Height="45"
             Click="BackBTN_Click"
-            Background="#FF28729C"
+            Background="#008500"
             Foreground="White"/>
     </Grid>
 </Window>

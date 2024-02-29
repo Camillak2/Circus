@@ -88,7 +88,7 @@
             Width="250"
             Height="50"
             Click="EnterBTN_Click"
-            Background="#FF28729C"
+            Background="#008500"
             Foreground="White"
             FontFamily="Courier New"
             FontWeight="DemiBold"
