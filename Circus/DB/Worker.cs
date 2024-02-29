@@ -27,7 +27,7 @@ namespace Circus.DB
         public string Surname { get; set; }
         public string Name { get; set; }
         public string Patronymic { get; set; }
-        public System.DateTime DateOfBirth { get; set; }
+        public Nullable<System.DateTime> DateOfBirth { get; set; }
         public int ID_Position { get; set; }
         public string Phone { get; set; }
         public Nullable<int> ID_TypeOfArtist { get; set; }

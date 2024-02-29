@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d99ed936613d4f0da99dc34eca094802" Name="Diagram1" ZoomLevel="40">
+      <Diagram DiagramId="43c21f9931ce4cd7b6885de7f3670039" Name="Diagram1" ZoomLevel="55">
         <EntityTypeShape EntityType="Circus_SagdievaModel.Animal" Width="1.5" PointX="11" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.AnimalType" Width="1.5" PointX="8.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Circus_SagdievaModel.Applicationn" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Circus_SagdievaModel.Cabinet" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_SagdievaModel.Applicationn" Width="1.5" PointX="5.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_SagdievaModel.Cabinet" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Cage" Width="1.5" PointX="13.25" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Circus_SagdievaModel.DressingRoom" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_SagdievaModel.DressingRoom" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Gender" Width="1.5" PointX="8.75" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Circus_SagdievaModel.Perfomance" Width="1.5" PointX="6" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_SagdievaModel.Perfomance" Width="1.5" PointX="6" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Perfomance_Report2" Width="1.5" PointX="8.25" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.PerfomanceType" Width="1.5" PointX="3.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Position" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Report1" Width="1.5" PointX="9" PointY="16.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Report2" Width="1.5" PointX="6" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Circus_SagdievaModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Circus_SagdievaModel.Taskk" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_SagdievaModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_SagdievaModel.Taskk" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Timetable" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.TypeOfArtist" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Worker" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Circus_SagdievaModel.CostumeDept" Width="1.5" PointX="10.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_SagdievaModel.CostumeDept" Width="1.5" PointX="10.75" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Perfomance_Report1" Width="1.5" PointX="11.25" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Animal_AnimalType" ManuallyRouted="false" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Animal_Gender" ManuallyRouted="false" />

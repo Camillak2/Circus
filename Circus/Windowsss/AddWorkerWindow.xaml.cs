@@ -59,7 +59,7 @@ namespace Circus.Windowsss
                     worker.Name = NameTB.Text.Trim();
                     worker.Patronymic = PatronymicTB.Text.Trim();
                     worker.Phone = PhoneTB.Text.Trim();
-                    //worker.DateOfBirth = DateOfBirthDP.SelectedDate;
+                    worker.DateOfBirth = DateOfBirthDP.SelectedDate;
                     worker.Login = LoginTB.Text.Trim();
                     worker.Password = PasswordTB.Text.Trim();
                     var a = PositionCB.SelectedItem as Position;
