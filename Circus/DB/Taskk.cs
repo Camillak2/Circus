@@ -18,6 +18,7 @@ namespace Circus.DB
         public Nullable<int> ID_ServiceStaff { get; set; }
         public string Description { get; set; }
         public Nullable<bool> DoneOrNo { get; set; }
+        public Nullable<System.DateTime> DateTime { get; set; }
     
         public virtual Worker Worker { get; set; }
     }

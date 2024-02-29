@@ -16,5 +16,9 @@ namespace Circus.DB
         public static Worker selectedForEditWorker;
 
         public static Animal selectedForEditAnimal;
+
+        public static Taskk selectedForEditTask;
+
+        public static Applicationn selectedForEditApplication;
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3c8732f4b5634c2da5075a4f24c02226" Name="Diagram1" ZoomLevel="73">
+      <Diagram DiagramId="d99ed936613d4f0da99dc34eca094802" Name="Diagram1" ZoomLevel="40">
         <EntityTypeShape EntityType="Circus_SagdievaModel.Animal" Width="1.5" PointX="11" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.AnimalType" Width="1.5" PointX="8.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Applicationn" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
@@ -17,14 +17,14 @@
         <EntityTypeShape EntityType="Circus_SagdievaModel.PerfomanceType" Width="1.5" PointX="3.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Position" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Report1" Width="1.5" PointX="9" PointY="16.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Circus_SagdievaModel.Report2" Width="1.5" PointX="6" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_SagdievaModel.Report2" Width="1.5" PointX="6" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Circus_SagdievaModel.Taskk" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Timetable" Width="1.5" PointX="8.25" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.TypeOfArtist" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Worker" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.CostumeDept" Width="1.5" PointX="10.75" PointY="12.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Circus_SagdievaModel.Perfomance_Report1" Width="1.5" PointX="11.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Circus_SagdievaModel.Taskk" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Animal_AnimalType" ManuallyRouted="false" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Animal_Gender" ManuallyRouted="false" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Cage_Animal" ManuallyRouted="false" />
@@ -37,9 +37,9 @@
         <AssociationConnector Association="Circus_SagdievaModel.FK_Perfomance_Report2_Report21" ManuallyRouted="false" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Worker_To_Position" ManuallyRouted="false" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Perfomance_Report1_Report11" ManuallyRouted="false" />
+        <AssociationConnector Association="Circus_SagdievaModel.FK_Task_Worker" ManuallyRouted="false" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Timetable_Worker" ManuallyRouted="false" />
         <AssociationConnector Association="Circus_SagdievaModel.FK_Worker_TypeOfArtist" ManuallyRouted="false" />
-        <AssociationConnector Association="Circus_SagdievaModel.FK_Task_Worker" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
