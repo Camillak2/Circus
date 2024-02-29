@@ -65,7 +65,7 @@ namespace Circus.Windowsss
                 PhotoWorker.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
         }
-        private void EditWorkerBTN_Click(object sender, RoutedEventArgs e)
+        private void SaveBTN_Click(object sender, RoutedEventArgs e)
         {
             try
             {

@@ -29,7 +29,7 @@ namespace Circus.Pages
             InitializeComponent();
             loggedWorker = DBConnection.loginedWorker;
             UserTB.Text = DBConnection.loginedWorker.Surname.ToString() + " " + DBConnection.loginedWorker.Name.ToString() + " " + DBConnection.loginedWorker.Patronymic.ToString();
-            EmailTB.Text = DBConnection.loginedWorker.login;
+            LoginTB.Text = DBConnection.loginedWorker.Login;
         }
 
         private void WorkersBTN_Click(object sender, RoutedEventArgs e)

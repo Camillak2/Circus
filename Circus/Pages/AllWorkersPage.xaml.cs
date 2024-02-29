@@ -39,6 +39,7 @@ namespace Circus.Pages
         {
             WorkersLV.ItemsSource = DBConnection.circusDB.Worker.ToList();
         }
+
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             Refresh();
@@ -46,10 +47,10 @@ namespace Circus.Pages
 
         private void EditWorkerBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (WorkersLV.SelectedItem is Worker)
+            if (WorkersLV.SelectedItem is Worker worker)
             {
                 DBConnection.selectedForEditWorker = WorkersLV.SelectedItem as Worker;
-                EditWorkerWindow editWorkerWindow = new EditWorkerWindow();
+                EditWorkerWindow editWorkerWindow = new EditWorkerWindow(worker);
                 editWorkerWindow.ShowDialog();
             }
             Refresh();

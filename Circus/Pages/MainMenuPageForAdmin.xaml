@@ -63,7 +63,7 @@
         <TextBlock
             Grid.Column="3"
             Grid.ColumnSpan="3"
-            x:Name="EmailTB"
+            x:Name="LoginTB"
             Grid.Row="3"
             Grid.RowSpan="2"
             FontSize="25"

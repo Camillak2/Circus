@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Circus.Windowsss"
         mc:Ignorable="d"
         Title="EditWorkerWindow"
-        d:DesignHeight="1080"
-        d:DesignWidth="1920"
+        Height="450"
+        Width="800"
         FontSize="30"
         FontFamily="Courier New">
     <Grid>

@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Circus.Windowsss"
         mc:Ignorable="d"
         Title="AddAnimalWindow"
-        d:DesignHeight="900"
-        d:DesignWidth="1500"
+        Height="450"
+        Width="800"
         FontSize="30"
         FontFamily="Courier New">
     <Grid>

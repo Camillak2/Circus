@@ -36,7 +36,7 @@ namespace Circus.Pages
                 string password = PasswordTB.Password.Trim();
 
                 workers = new List<Worker>(DBConnection.circusDB.Worker.ToList());
-                var currentWorker = workers.FirstOrDefault(i => i.login.Trim() == login && i.password.Trim() == password);
+                var currentWorker = workers.FirstOrDefault(i => i.Login.Trim() == login && i.Password.Trim() == password);
                 DBConnection.loginedWorker = currentWorker;
                 if (currentWorker != null && currentWorker.ID_Position == 1)
                 {
