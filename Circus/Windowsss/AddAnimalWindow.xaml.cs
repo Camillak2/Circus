@@ -30,7 +30,8 @@ namespace Circus.Windowsss
         {
             InitializeComponent();
             animals = DBConnection.circusDB.Animal.ToList();
-            trainers = DBConnection.circusDB.Worker.FirstOrDefault(i => i.ID_Position == 3).ToList();
+            trainers = DBConnection.circusDB.Worker.Where(i => i.ID_Position == 3).ToList();
+
             animalTypes = DBConnection.circusDB.AnimalType.ToList();
             genders = DBConnection.circusDB.Gender.ToList();
             this.DataContext = this;
@@ -54,8 +55,8 @@ namespace Circus.Windowsss
                 else
                 {
                     animal.Name = NameTB.Text.Trim();
-                    //animal.Age.ToString() = AgeTB.Text.Trim();
-                    //animal.Weight = WeightTB.Text.Trim();
+                    animal.Age = int.Parse(AgeTB.Text);
+                    animal.Weight = int.Parse(WeightTB.Text);
 
                     var a = TypeCB.SelectedItem as AnimalType;
                     animal.ID_Type = a.ID;

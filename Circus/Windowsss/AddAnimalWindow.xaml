@@ -8,7 +8,7 @@
         Title="AddAnimalWindow"
         Height="450"
         Width="800"
-        FontSize="30"
+        FontSize="20"
         FontFamily="Courier New">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -33,85 +33,85 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <TextBlock Grid.Row="1"
-            Grid.ColumnSpan="2"
-            Grid.Column="1"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Text="Имя"/>
+Grid.ColumnSpan="2"
+Grid.Column="1"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+Text="Имя"/>
         <TextBox x:Name="NameTB"
-            Grid.Row="1"
-            Grid.Column="3"
-            Grid.ColumnSpan="2"
-            Width="230"
-            Height="40"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"/>
+Grid.Row="1"
+Grid.Column="3"
+Grid.ColumnSpan="2"
+Width="150"
+Height="40"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"/>
         <TextBlock Grid.Row="2"
-            Grid.Column="1"
-            Grid.ColumnSpan="2"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Text="Тип"/>
+Grid.Column="1"
+Grid.ColumnSpan="2"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+Text="Тип"/>
         <ComboBox x:Name="TypeCB"
-            Grid.Row="2"
-            Grid.Column="3"
-            Grid.ColumnSpan="2"
-            Width="230"
-            Height="40"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            ItemsSource="{Binding animalTypes}">
+Grid.Row="2"
+Grid.Column="3"
+Grid.ColumnSpan="2"
+Width="150"
+Height="40"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+ItemsSource="{Binding animalTypes}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}"/>
+                    <TextBlock Text="{Binding Type}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
         <TextBlock Grid.Row="3"
-            Grid.Column="1"
-            Grid.ColumnSpan="2"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Text="Возраст"/>
+Grid.Column="1"
+Grid.ColumnSpan="2"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+Text="Возраст"/>
         <TextBox x:Name="AgeTB"
-            Grid.Row="3"
-            Grid.Column="3"
-            Grid.ColumnSpan="2"
-            Width="230"
-            Height="40"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"/>
+Grid.Row="3"
+Grid.Column="3"
+Grid.ColumnSpan="2"
+Width="150"
+Height="40"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"/>
         <TextBlock Grid.Row="4"
-            Grid.Column="1"
-            Grid.ColumnSpan="2"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Text="Вес"/>
+Grid.Column="1"
+Grid.ColumnSpan="2"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+Text="Вес"/>
         <TextBox x:Name="WeightTB"
-            Grid.Row="4"
-            Grid.Column="3"
-            Grid.ColumnSpan="2"
-            Width="230"
-            Height="40"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"/>
+Grid.Row="4"
+Grid.Column="3"
+Grid.ColumnSpan="2"
+Width="150"
+Height="40"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"/>
         <TextBlock Grid.Row="5"
-            Grid.Column="1"
-            Grid.ColumnSpan="2"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Text="Дрессировщик"/>
+Grid.Column="1"
+Grid.ColumnSpan="2"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+Text="Дрессировщик"/>
         <ComboBox x:Name="TrainerCB"
-            Grid.Row="5"
-            Grid.Column="3"
-            Grid.ColumnSpan="2"
-            Width="230"
-            Height="40"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            ItemsSource="{Binding trainers}">
+Grid.Row="5"
+Grid.Column="3"
+Grid.ColumnSpan="2"
+Width="150"
+Height="40"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+ItemsSource="{Binding trainers}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -123,20 +123,20 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <TextBlock Grid.Row="1"
-            Grid.Column="5"
-            HorizontalAlignment="Left"
-            Text="Пол"
-            Grid.ColumnSpan="2"
-            VerticalAlignment="Center"/>
+Grid.Column="5"
+HorizontalAlignment="Left"
+Text="Пол"
+Grid.ColumnSpan="2"
+VerticalAlignment="Center"/>
         <ComboBox x:Name="GenderCB"
-            Grid.Row="1"
-            Grid.Column="7"
-            Grid.ColumnSpan="2"
-            Width="230"
-            Height="40"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            ItemsSource="{Binding genders}">
+Grid.Row="1"
+Grid.Column="7"
+Grid.ColumnSpan="2"
+Width="150"
+Height="40"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+ItemsSource="{Binding genders}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}"/>
@@ -144,56 +144,56 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <TextBlock
-            Grid.Row="2"
-            Grid.Column="5"
-            Grid.ColumnSpan="2"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Text="Вкусовые&#xA;предпочтения"/>
+Grid.Row="2"
+Grid.Column="5"
+Grid.ColumnSpan="2"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+Text="Вкусовые&#xA;предпочтения"/>
         <TextBox x:Name="FoodPreferenceTB"
-            Grid.Row="2"
-            Grid.Column="7"
-            Grid.RowSpan="2"
-            Grid.ColumnSpan="3"
-            Width="300"
-            Height="200"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"/>
+Grid.Row="2"
+Grid.Column="7"
+Grid.RowSpan="2"
+Grid.ColumnSpan="3"
+Width="230"
+Height="100"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"/>
         <TextBlock
-            Grid.Row="4"
-            Grid.Column="5"
-            Grid.ColumnSpan="2"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            Text="Рекомендации&#xA;по уходу"/>
+Grid.Row="4"
+Grid.Column="5"
+Grid.ColumnSpan="2"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+Text="Рекомендации&#xA;по уходу"/>
         <TextBox x:Name="CareRecommendationsTB"
-            Grid.Row="4"
-            Grid.Column="7"
-            Grid.RowSpan="2"
-            Grid.ColumnSpan="3"
-            Width="300"
-            Height="200"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"/>
+Grid.Row="4"
+Grid.Column="7"
+Grid.RowSpan="2"
+Grid.ColumnSpan="3"
+Width="230"
+Height="100"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"/>
         <Button x:Name="AddAnimalBTN"
-            Content="Добавить животное"
-            Grid.Column="3"
-            Grid.ColumnSpan="4"
-            Grid.Row="6"
-            Width="400"
-            Height="45"
-            Click="AddAnimalBTN_Click"
-            Background="#008500"
-            Foreground="White"/>
+Content="Добавить животное"
+Grid.Column="3"
+Grid.ColumnSpan="4"
+Grid.Row="6"
+Width="300"
+Height="38"
+Click="AddAnimalBTN_Click"
+Background="#008500"
+Foreground="White"/>
         <Button x:Name="BackBTN"      
-            Grid.Column="3"
-            Grid.Row="10"
-            Grid.ColumnSpan="4"
-            Width="300"
-            Content="Назад"
-            Height="45"
-            Click="BackBTN_Click"
-            Background="#008500"
-            Foreground="White"/>
+Grid.Column="3"
+Grid.Row="10"
+Grid.ColumnSpan="4"
+Width="200"
+Content="Назад"
+Height="38"
+Click="BackBTN_Click"
+Background="#A60000"
+Foreground="White"/>
     </Grid>
 </Window>

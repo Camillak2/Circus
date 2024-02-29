@@ -10,22 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Circus.Pages
+namespace Circus.Windowsss
 {
     /// <summary>
-    /// Логика взаимодействия для AdminToServiceStaffPage.xaml
+    /// Логика взаимодействия для EditTaskWindow.xaml
     /// </summary>
-    public partial class AdminToServiceStaffPage : Page
+    public partial class EditTaskWindow : Window
     {
-        public AdminToServiceStaffPage()
+        public EditTaskWindow()
         {
             InitializeComponent();
         }
 
-        private void AddWorkerBTN_Click(object sender, RoutedEventArgs e)
+        private void AddAnimalBTN_Click(object sender, RoutedEventArgs e)
         {
 
         }

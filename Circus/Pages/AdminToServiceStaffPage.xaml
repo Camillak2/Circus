@@ -5,10 +5,130 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Circus.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800" FontSize="20" FontFamily="Courier New"
       Title="AdminToServiceStaffPage">
-
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Задачи"
+            FontSize="30"
+            Margin="10"
+            Grid.Column="2"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+        <ListView x:Name="WorkersLV"
+            FontSize="20"
+            Grid.Column="0"
+            Grid.ColumnSpan="6"
+            Grid.Row="2"
+            Grid.RowSpan="6"
+            MaxHeight="500"
+            MaxWidth="780">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header ="ФИО" Width="300">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Surname}"/>
+                                        <TextBlock Text="{Binding Name}"/>
+                                        <TextBlock Text="{Binding Patronymic}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header ="Описание" Width="350">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding IsSelected}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header ="Выполнено" Width="130">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DoneOrNo}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="EditWorkerBTN"
+            Content="Изменить задачу"
+            FontSize="20"
+            Margin="10"
+            Width="250"
+            Height="38"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.Row="8"
+            Grid.RowSpan="2"
+            Click="EditWorkerBTN_Click"
+            Background="#008500"
+            Foreground="White"/>
+        <Button x:Name="AddWorkerBTN"
+            Content="Добавить задачу"
+            FontSize="20"
+            Margin="10"
+            Width="250"
+            Height="38"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Grid.Row="8"
+            Grid.RowSpan="2"
+            Click="AddWorkerBTN_Click"
+            Background="#008500"
+            Foreground="White"/>
+        <Button x:Name="DeleteWorkerBTN"
+            Content="Удалить задачу"
+            FontSize="20"
+            Margin="10"
+            Width="250"
+            Height="38"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            Grid.Row="8"
+            Grid.RowSpan="2"
+            Click="DeleteWorkerBTN_Click"
+            Background="#008500"
+            Foreground="White"/>
+        <Button x:Name="BackBTN"
+            Content="Назад"
+            FontSize="20"
+            Margin="10"
+            Width="200"
+            Height="38"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Grid.Row="9"
+            Grid.RowSpan="2"
+            Click="BackBTN_Click"
+            Background="#FF28729C"
+            Foreground="White"/>
     </Grid>
 </Page>

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Circus.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="1080" d:DesignWidth="1920" FontSize="30" FontFamily="Courier New"
+      Height="450" Width="800" FontSize="20" FontFamily="Courier New"
       Title="AllWorkersPage">
 
     <Grid>
@@ -32,7 +32,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Сотрудники"
-            FontSize="40"
+            FontSize="30"
             Margin="10"
             Grid.Column="2"
             Grid.Row="0"
@@ -47,11 +47,11 @@
             Grid.Row="2"
             Grid.RowSpan="6"
             MaxHeight="500"
-            MaxWidth="1800">
+            MaxWidth="780">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header ="ФИО" Width="300">
+                        <GridViewColumn Header ="ФИО" Width="150">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -62,49 +62,49 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Дата рождения" Width="170">
+                        <GridViewColumn Header ="Дата рождения" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding DateOfBirth, StringFormat = dd.MM.yyyy}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Телефон" Width="200">
+                        <GridViewColumn Header ="Телефон" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Phone}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Должность" Width="200">
+                        <GridViewColumn Header ="Должность" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Position.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Тип артиста" Width="200">
+                        <GridViewColumn Header ="Тип артиста" Width="70">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding TypeOfArtist.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Логин" Width="200">
+                        <GridViewColumn Header ="Логин" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding TypeOfArtist.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Пароль" Width="200">
+                        <GridViewColumn Header ="Пароль" Width="50">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding TypeOfArtist.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Фото" Width="330">
+                        <GridViewColumn Header ="Фото" Width="110">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Image Source="{Binding Photo}"/>
@@ -120,7 +120,7 @@
             FontSize="20"
             Margin="10"
             Width="200"
-            Height="40"
+            Height="38"
             Grid.Column="2"
             Grid.ColumnSpan="2"
             Grid.Row="9"
@@ -133,39 +133,39 @@
             FontSize="20"
             Margin="10"
             Width="250"
-            Height="40"
+            Height="38"
             Grid.Column="0"
             Grid.ColumnSpan="2"
             Grid.Row="8"
             Grid.RowSpan="2"
             Click="EditWorkerBTN_Click"
-            Background="#FF28729C"
+            Background="#008500"
             Foreground="White"/>
         <Button x:Name="AddWorkerBTN"
             Content="Добавить сотрудника"
             FontSize="20"
             Margin="10"
             Width="250"
-            Height="40"
+            Height="38"
             Grid.Column="2"
             Grid.ColumnSpan="2"
             Grid.Row="8"
             Grid.RowSpan="2"
             Click="AddWorkerBTN_Click"
-            Background="#FF28729C"
+            Background="#008500"
             Foreground="White"/>
         <Button x:Name="DeleteWorkerBTN"
             Content="Удалить сотрудника"
             FontSize="20"
             Margin="10"
             Width="250"
-            Height="40"
+            Height="38"
             Grid.Column="4"
             Grid.ColumnSpan="2"
             Grid.Row="8"
             Grid.RowSpan="2"
             Click="DeleteWorkerBTN_Click"
-            Background="#FF28729C"
+            Background="#008500"
             Foreground="White"/>
         <TextBlock
             Grid.Column="4"
@@ -180,7 +180,7 @@
             Grid.ColumnSpan="2"
             Grid.Row="0"
             Grid.RowSpan="2"
-            Width="250"
+            Width="200"
             Height="40"
             TextChanged="SearchTB_TextChanged"/>
     </Grid>

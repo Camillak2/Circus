@@ -17,6 +17,7 @@ namespace Circus.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Perfomance()
         {
+            this.Perfomance_Report1 = new HashSet<Perfomance_Report1>();
             this.Perfomance_Report2 = new HashSet<Perfomance_Report2>();
             this.Timetable = new HashSet<Timetable>();
         }
@@ -28,6 +29,8 @@ namespace Circus.DB
         public Nullable<System.DateTime> EndDate { get; set; }
     
         public virtual PerfomanceType PerfomanceType { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Perfomance_Report1> Perfomance_Report1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Perfomance_Report2> Perfomance_Report2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

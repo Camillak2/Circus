@@ -20,6 +20,7 @@ namespace Circus.DB
             this.Applicationn = new HashSet<Applicationn>();
             this.Cabinet = new HashSet<Cabinet>();
             this.Timetable = new HashSet<Timetable>();
+            this.Taskk = new HashSet<Taskk>();
         }
     
         public int ID { get; set; }
@@ -42,5 +43,7 @@ namespace Circus.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Timetable> Timetable { get; set; }
         public virtual TypeOfArtist TypeOfArtist { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Taskk> Taskk { get; set; }
     }
 }
