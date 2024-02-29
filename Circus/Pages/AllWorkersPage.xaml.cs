@@ -53,6 +53,10 @@ namespace Circus.Pages
                 EditWorkerWindow editWorkerWindow = new EditWorkerWindow(worker);
                 editWorkerWindow.ShowDialog();
             }
+            else if (WorkersLV.SelectedItem is null)
+            {
+                MessageBox.Show("Выберите сотрудника!");
+            }
             Refresh();
         }
 
@@ -68,6 +72,10 @@ namespace Circus.Pages
             {
                 DBConnection.circusDB.Worker.Remove(work);
                 DBConnection.circusDB.SaveChanges();
+            }
+            else if (WorkersLV.SelectedItem is null)
+            {
+                MessageBox.Show("Выберите сотрудника!");
             }
             Refresh();
         }
@@ -85,7 +93,7 @@ namespace Circus.Pages
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new MainMenuPageForAdmin());
         }
     }
 }

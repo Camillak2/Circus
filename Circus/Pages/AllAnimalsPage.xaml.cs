@@ -50,6 +50,10 @@ namespace Circus.Pages
                 EditAnimalWindow editAnimalWindow = new EditAnimalWindow(animal);
                 editAnimalWindow.ShowDialog();
             }
+            else if (AnimalsLV.SelectedItem is null)
+            {
+                MessageBox.Show("Выберите животное!");
+            }
             Refresh();
         }
 
@@ -66,6 +70,10 @@ namespace Circus.Pages
                 DBConnection.circusDB.Animal.Remove(anim);
                 DBConnection.circusDB.SaveChanges();
             }
+            else if (AnimalsLV.SelectedItem is null)
+            {
+                MessageBox.Show("Выберите животное!");
+            }
             Refresh();
         }
 
@@ -81,7 +89,7 @@ namespace Circus.Pages
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new MainMenuPageForAdmin());
         }
     }
 }

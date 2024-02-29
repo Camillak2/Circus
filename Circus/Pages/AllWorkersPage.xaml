@@ -93,14 +93,14 @@
                         <GridViewColumn Header ="Логин" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding TypeOfArtist.Name}"/>
+                                    <TextBlock Text="{Binding Login}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header ="Пароль" Width="50">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding TypeOfArtist.Name}"/>
+                                    <TextBlock Text="{Binding Password}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

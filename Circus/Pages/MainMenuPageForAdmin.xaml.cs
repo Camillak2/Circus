@@ -59,7 +59,7 @@ namespace Circus.Pages
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new AuthorizationPage());
         }
     }
 }

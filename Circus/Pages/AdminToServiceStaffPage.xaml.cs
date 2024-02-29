@@ -53,6 +53,10 @@ namespace Circus.Pages
                 EditTaskWindow editTaskWindow = new EditTaskWindow(task);
                 editTaskWindow.ShowDialog();
             }
+            else if (TasksLV.SelectedItem is null)
+            {
+                MessageBox.Show("Выберите задачу!");
+            }
             Refresh();
         }
 
@@ -69,12 +73,16 @@ namespace Circus.Pages
                 DBConnection.circusDB.Taskk.Remove(task);
                 DBConnection.circusDB.SaveChanges();
             }
+            else if (TasksLV.SelectedItem is null)
+            {
+                MessageBox.Show("Выберите задачу!");
+            }
             Refresh();
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+            NavigationService.Navigate(new MainMenuPageForAdmin());
         }
     }
 }
