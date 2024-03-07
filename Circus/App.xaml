@@ -14,7 +14,7 @@
             <Setter Property="FontFamily" Value="Courier New" />
         </Style>
 
-        <Style TargetType="Border">
+        <Style TargetType="Border" x:Key="BorderStyle">
             <Setter Property="Background" Value="#d4adaa"/>
         </Style>
 
@@ -43,7 +43,7 @@
 
         <Style TargetType="TextBox">
             <Setter Property="FontSize" Value="30"/>
-            <Setter Property="FontFamily" Value="Book Antiqua"/>
+            <Setter Property="FontFamily" Value="Courier New"/>
             <Setter Property="Background" Value="#d4adaa"/>
             <Setter Property="BorderBrush" Value="#9a7673"/>
             <Setter Property="Foreground" Value="#FF976C68"/>
@@ -89,6 +89,7 @@
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="FontFamily" Value="Courier New"/>
             <Setter Property="Foreground" Value="#FF976C68"/>
+            <Setter Property="FontFamily" Value="Courier New"/>
         </Style>
 
         <Style TargetType="RadioButton">
