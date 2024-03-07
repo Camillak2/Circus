@@ -24,7 +24,7 @@ namespace Circus
         public MainWindow()
         {
             InitializeComponent();
-            NaFr.NavigationService.Navigate(new WelcomePage());
+            NaFr.NavigationService.Navigate(new AuthorizationPage());
         }
     }
 }

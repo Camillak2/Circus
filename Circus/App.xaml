@@ -25,13 +25,14 @@
             <Setter Property="Background" Value="#d4adaa"/>
             <Setter Property="BorderBrush" Value="#9a7673"/>
             <Setter Property="FontFamily" Value="Courier New"/>
-            <Setter Property="FontWeight" Value="DemiBold"/>
             <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="20"
-                                Background="{TemplateBinding Background}">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="20">
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
