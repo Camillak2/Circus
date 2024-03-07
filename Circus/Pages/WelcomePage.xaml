@@ -31,12 +31,12 @@
         </Grid.RowDefinitions>
 
         <Image Source = "/Images/clown.png" 
-            MaxHeight="500"
+            Height="220"
             Grid.Column="1"
             Grid.ColumnSpan="4"
             Grid.Row="2"
             Grid.RowSpan="5"/>
-        <Border Background="#008500"
+        <Border
             MaxWidth="1920"
             MaxHeight="80"
             CornerRadius="0, 0, 50, 50"
@@ -53,11 +53,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Width="450"
-            Height="70"
-            Background="#A60000"
-            Foreground="White"
-            FontFamily="Courier New"
-            FontSize="40"
+            Height="60"
             Click="EnterBTN_Click"/>
     </Grid>
 </Page>
