@@ -184,6 +184,12 @@
     <Compile Include="Pages\MainMenuPageForTrainer.xaml.cs">
       <DependentUpon>MainMenuPageForTrainer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\TasksPage.xaml.cs">
+      <DependentUpon>TasksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TimetableForAnimalsPage.xaml.cs">
+      <DependentUpon>TimetableForAnimalsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\TimetablePage.xaml.cs">
       <DependentUpon>TimetablePage.xaml</DependentUpon>
     </Compile>
@@ -192,6 +198,9 @@
     </Compile>
     <Compile Include="Windowsss\AddTaskWindow.xaml.cs">
       <DependentUpon>AddTaskWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windowsss\AddTimetableForAnimalWindow.xaml.cs">
+      <DependentUpon>AddTimetableForAnimalWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windowsss\AddTimetableWindow.xaml.cs">
       <DependentUpon>AddTimetableWindow.xaml</DependentUpon>
@@ -204,6 +213,9 @@
     </Compile>
     <Compile Include="Windowsss\EditTaskWindow.xaml.cs">
       <DependentUpon>EditTaskWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windowsss\EditTimetableForAnimalWindow.xaml.cs">
+      <DependentUpon>EditTimetableForAnimalWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windowsss\EditTimetableWindow.xaml.cs">
       <DependentUpon>EditTimetableWindow.xaml</DependentUpon>
@@ -264,6 +276,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\TasksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TimetableForAnimalsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\TimetablePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -273,6 +293,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windowsss\AddTaskWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windowsss\AddTimetableForAnimalWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -289,6 +313,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windowsss\EditTaskWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windowsss\EditTimetableForAnimalWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

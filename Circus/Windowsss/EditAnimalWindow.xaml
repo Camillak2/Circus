@@ -45,7 +45,7 @@
         Grid.Column="3"
         Grid.ColumnSpan="2"
         Width="150"
-        Height="40"
+        Height="38"
         HorizontalAlignment="Left"
         VerticalAlignment="Center"/>
             <TextBlock Grid.Row="2"
@@ -55,14 +55,14 @@
         VerticalAlignment="Center"
         Text="Тип"/>
             <ComboBox x:Name="TypeCB"
-        Grid.Row="2"
-        Grid.Column="3"
-        Grid.ColumnSpan="2"
-        Width="150"
-        Height="40"
-        HorizontalAlignment="Left"
-        VerticalAlignment="Center"
-        ItemsSource="{Binding animalTypes}">
+                Grid.Row="2"
+                Grid.Column="3"
+                Grid.ColumnSpan="2"
+                Width="150"
+                Height="38"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                ItemsSource="{Binding animalTypes}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Type}"/>
@@ -80,7 +80,7 @@
         Grid.Column="3"
         Grid.ColumnSpan="2"
         Width="150"
-        Height="40"
+        Height="38"
         HorizontalAlignment="Left"
         VerticalAlignment="Center"/>
             <TextBlock Grid.Row="4"
@@ -94,7 +94,7 @@
         Grid.Column="3"
         Grid.ColumnSpan="2"
         Width="150"
-        Height="40"
+        Height="38"
         HorizontalAlignment="Left"
         VerticalAlignment="Center"/>
             <TextBlock Grid.Row="5"
@@ -108,7 +108,7 @@
         Grid.Column="3"
         Grid.ColumnSpan="2"
         Width="150"
-        Height="40"
+        Height="38"
         HorizontalAlignment="Left"
         VerticalAlignment="Center"
         ItemsSource="{Binding trainers}">
@@ -133,7 +133,7 @@
         Grid.Column="7"
         Grid.ColumnSpan="2"
         Width="150"
-        Height="40"
+        Height="38"
         HorizontalAlignment="Left"
         VerticalAlignment="Center"
         ItemsSource="{Binding genders}">
@@ -182,9 +182,7 @@
         Grid.Row="6"
         Width="300"
         Height="38"
-        Click="SaveBTN_Click"
-        Background="#008500"
-        Foreground="White"/>
+        Click="SaveBTN_Click"/>
             <Button x:Name="BackBTN"      
         Grid.Column="3"
         Grid.Row="10"
@@ -192,8 +190,6 @@
         Width="200"
         Content="Назад"
         Height="38"
-        Click="BackBTN_Click"
-        Background="#A60000"
-        Foreground="White"/>
+        Click="BackBTN_Click"/>
     </Grid>
 </Window>

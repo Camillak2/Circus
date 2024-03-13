@@ -99,15 +99,13 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"/>
         <Button x:Name="AddTimetableBTN"
-            Content="Добавить расписание"
+            Content="Добавить"
             Grid.Column="3"
             Grid.ColumnSpan="4"
             Grid.Row="6"
-            Width="250"
+            Width="230"
             Height="38"
-            Click="AddTimetableBTN_Click"
-            Background="#008500"
-            Foreground="White"/>
+            Click="AddTimetableBTN_Click"/>
         <Button x:Name="BackBTN"      
             Grid.Column="3"
             Grid.Row="10"
@@ -115,8 +113,6 @@
             Width="200"
             Content="Назад"
             Height="38"
-            Click="BackBTN_Click"
-            Background="#A60000"
-            Foreground="White"/>
+            Click="BackBTN_Click"/>
     </Grid>
 </Window>

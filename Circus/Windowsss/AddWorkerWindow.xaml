@@ -50,13 +50,13 @@
             VerticalAlignment="Center"
             Text="Фамилия"/>
         <TextBox x:Name="SurnameTB"
-    Grid.Row="1"
-    Grid.Column="5"
-    Grid.ColumnSpan="3"
-    Width="150"
-    Height="40"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"/>
+            Grid.Row="1"
+            Grid.Column="5"
+            Grid.ColumnSpan="3"
+            Width="150"
+            Height="38"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"/>
         <TextBlock Grid.Row="2"
     Grid.Column="3"
     Grid.ColumnSpan="2"
@@ -68,7 +68,7 @@
     Grid.Column="5"
     Grid.ColumnSpan="3"
     Width="150"
-    Height="40"
+    Height="38"
     HorizontalAlignment="Left"
     VerticalAlignment="Center"/>
         <TextBlock Grid.Row="3"
@@ -82,7 +82,7 @@
     Grid.Column="5"
     Grid.ColumnSpan="3"
     Width="150"
-    Height="40"
+    Height="38"
     HorizontalAlignment="Left"
     VerticalAlignment="Center"/>
         <TextBlock Grid.Row="4"
@@ -95,7 +95,7 @@
     Grid.Row="4"
     Grid.Column="5"
     Width="150"
-    Height="40"
+    Height="38"
     Grid.ColumnSpan="3"
     HorizontalAlignment="Left"
     VerticalAlignment="Center"
@@ -111,7 +111,7 @@
     Grid.Column="10"
     Grid.ColumnSpan="3"
     Width="150"
-    Height="40"
+    Height="38"
     HorizontalAlignment="Left"
     VerticalAlignment="Center"/>
         <TextBlock Grid.Row="1"
@@ -125,7 +125,7 @@
     Grid.Column="10"
     Grid.ColumnSpan="3"
     Width="150"
-    Height="40"
+    Height="38"
     HorizontalAlignment="Left"
     VerticalAlignment="Center"
     ItemsSource="{Binding positions}">
@@ -147,7 +147,7 @@
     Grid.Column="10"
     Grid.ColumnSpan="3"
     Width="150"
-    Height="40"
+    Height="38"
     HorizontalAlignment="Left"
     VerticalAlignment="Center"/>
         <TextBlock Grid.Row="4"
@@ -161,31 +161,26 @@
             Grid.Column="10"
             Grid.ColumnSpan="3"
             Width="150"
-            Height="40"
+            Height="38"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"/>
         <Button x:Name="AddPhotoBTN"
-            Content="Добавить фото"
+            Content="Фото"
             Grid.Column="0"
             Grid.ColumnSpan="3"
             Grid.Row="6"
-            Width="170"
+            Width="160"
             Height="38"
-            Margin="10"
-            Click="AddPhotoBTN_Click"
-            Background="#008500"
-            Foreground="White"/>
+            Click="AddPhotoBTN_Click"/>
 
         <Button x:Name="AddWorkerBTN"
-            Content="Добавить сотрудника"
+            Content="Добавить"
             Grid.Column="7"
             Grid.ColumnSpan="5"
             Grid.Row="6"
-            Width="250"
+            Width="230"
             Height="38"
-            Click="AddWorkerBTN_Click"
-            Background="#008500"
-            Foreground="White"/>
+            Click="AddWorkerBTN_Click"/>
 
         <Button x:Name="BackBTN"      
             Grid.Column="5"
@@ -194,8 +189,6 @@
             Width="150"
             Content="Назад"
             Height="38"
-            Click="BackBTN_Click"
-            Background="#A60000"
-            Foreground="White"/>
+            Click="BackBTN_Click"/>
     </Grid>
 </Window>

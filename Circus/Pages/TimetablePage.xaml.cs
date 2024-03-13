@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Circus.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,16 +21,31 @@ namespace Circus.Pages
     /// </summary>
     public partial class TimetablePage : Page
     {
+        public static List<Timetable> timetables { get; set; }
+
         public TimetablePage()
         {
             InitializeComponent();
+            timetables = DBConnection.circusDB.Timetable.ToList();
+            this.DataContext = this;
+            Refresh();
+        }
+
+        private void Refresh()
+        {
+            TimetablesLV.ItemsSource = DBConnection.circusDB.Timetable.ToList();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Refresh();
         }
 
         private void ChangeBTN_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
+        
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new MainMenuPageForArtist());

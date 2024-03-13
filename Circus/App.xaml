@@ -63,6 +63,28 @@
             </Setter>
         </Style>
 
+        <Style TargetType="ComboBox">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="Courier New"/>
+            <Setter Property="Background" Value="#d4adaa"/>
+            <Setter Property="BorderBrush" Value="#9a7673"/>
+            <Setter Property="Foreground" Value="#FF976C68"/>
+            <Setter Property="FontFamily" Value="Courier New"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="20">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <Style TargetType="PasswordBox">
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="FontFamily" Value="Book Antiqua"/>
