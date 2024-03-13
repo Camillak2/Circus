@@ -40,18 +40,18 @@
             Grid.RowSpan="2"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"/>
-        <ListView x:Name="WorkersLV"
+        <ListView x:Name="TimetablesLV"
             FontSize="20"
             Grid.Column="0"
             Grid.ColumnSpan="6"
             Grid.Row="2"
             Grid.RowSpan="6"
             MaxHeight="500"
-            MaxWidth="790">
+            MaxWidth="780">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header ="ФИО" Width="200">
+                        <GridViewColumn Header ="ФИО" Width="300">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -62,31 +62,24 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Дата рождения" Width="150">
+                        <GridViewColumn Header ="Представление" Width="200">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding DateOfBirth, StringFormat = dd.MM.yyyy}"/>
+                                    <CheckBox IsChecked="{Binding IsSelected}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Телефон" Width="150">
+                        <GridViewColumn Header ="Дата" Width="160">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Phone}"/>
+                                    <TextBlock Text="{Binding Perfomance.Date, StringFormat = dd.MM.yyyy}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Должность" Width="150">
+                        <GridViewColumn Header ="Время" Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Position.Name}"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Header ="Фото" Width="140">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image Source="{Binding Photo}"/>
+                                    <TextBlock Text="{Binding Time}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -94,18 +87,27 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="ChangeBTN"
+            FontSize="20"
+            Margin="10"
+            Content="Изменить"
+            Width="230"
+            Height="38"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Grid.Row="8"
+            Grid.RowSpan="2"
+            Click="ChangeBTN_Click"/>
         <Button x:Name="BackBTN"
             FontSize="20"
             Margin="10"
             Content="Назад"
             Width="200"
-            Height="40"
+            Height="38"
             Grid.Column="2"
             Grid.ColumnSpan="2"
             Grid.Row="9"
             Grid.RowSpan="2"
-            Click="BackBTN_Click"
-            Background="#FF28729C"
-            Foreground="White"/>
+            Click="BackBTN_Click"/>
     </Grid>
 </Page>

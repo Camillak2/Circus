@@ -25,10 +25,14 @@ namespace Circus.Pages
             InitializeComponent();
         }
 
-        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        private void ChangeBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.GoBack();
+
         }
 
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MainMenuPageForArtist());
+        }
     }
 }
