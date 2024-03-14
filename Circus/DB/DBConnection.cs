@@ -22,5 +22,7 @@ namespace Circus.DB
         public static Applicationn selectedForEditApplication;
 
         public static Timetable selectedForEditTimetable;
+
+        public static Perfomance currentPerfomance;
     }
 }

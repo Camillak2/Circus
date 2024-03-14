@@ -26,6 +26,7 @@ namespace Circus.Windowsss
         public static List<Timetable> timetables { get; set; }
 
         Timetable contextTimetable;
+        Perfomance currentPerfomance;
         public EditTimetableWindow(Timetable timetable)
         {
             InitializeComponent();
@@ -37,10 +38,14 @@ namespace Circus.Windowsss
         private void InitializeDataInPage()
         {
             timetables = DBConnection.circusDB.Timetable.ToList();
-            artists = DBConnection.circusDB.Worker.ToList();
+            artists = DBConnection.circusDB.Worker.Where(i => i.ID_Position == 2).ToList();
             this.DataContext = this;
             ArtistCB.SelectedIndex = (int)contextTimetable.ID_Artist - 1;
             PerfomanceCB.SelectedIndex = (int)contextTimetable.ID_Perfomance - 1;
+
+            timetables = DBConnection.circusDB.Timetable.ToList();
+            StartDateDP.SelectedDate = currentPerfomance.StartDate;
+            EndDateDP.SelectedDate = currentPerfomance.EndDate;
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)

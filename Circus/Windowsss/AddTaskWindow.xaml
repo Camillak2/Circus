@@ -34,17 +34,17 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="1"
+        <TextBlock Grid.Row="3"
             Grid.ColumnSpan="2"
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Text="Персонал"/>
         <ComboBox x:Name="StaffCB"
-            Grid.Row="1"
+            Grid.Row="3"
             Grid.Column="3"
-            Grid.ColumnSpan="2"
-            Width="150"
+            Grid.ColumnSpan="5"
+            Width="400"
             Height="40"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -60,14 +60,14 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <TextBlock
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="1"
             Grid.ColumnSpan="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Text="Описание"/>
         <TextBox x:Name="DescriptionTB"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="3"
             Grid.RowSpan="2"
             Grid.ColumnSpan="3"
@@ -80,18 +80,20 @@
             IsChecked="False"
             Grid.Row="4"
             Grid.Column="1"
-            Grid.ColumnSpan="2"/>
+            Grid.ColumnSpan="3"/>
         <TextBlock
             Grid.Row="1"
+            Grid.RowSpan="2"
             Grid.Column="6"
             Grid.ColumnSpan="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="Дата и Время"/>
+            Text="Дата&#xA;Время"/>
         <DatePicker x:Name="DateTimeDP"
             Grid.Row="1"
-            Grid.Column="8"
-            Grid.ColumnSpan="2"
+            Grid.RowSpan="2"
+            Grid.Column="7"
+            Grid.ColumnSpan="3"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"/>
         <Button x:Name="AddTaskBTN"

@@ -168,14 +168,14 @@
                 VerticalAlignment="Center"
                 IsEnabled="False"/>
         </Border>
-        <Button x:Name="AddTimetableBTN"
-            Content="Добавить"
+        <Button x:Name="SaveBTN"
+            Content="Сохранить"
             Grid.Column="3"
             Grid.ColumnSpan="4"
             Grid.Row="6"
             Width="230"
             Height="38"
-            Click="AddTimetableBTN_Click"/>
+            Click="SaveBTN_Click"/>
         <Button x:Name="BackBTN"      
             Grid.Column="3"
             Grid.Row="10"
