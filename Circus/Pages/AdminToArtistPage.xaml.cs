@@ -24,6 +24,7 @@ namespace Circus.Pages
     {
         public static List<Worker> artists { get; set; }
         public static List<Timetable> timetables { get; set; }
+        public static List<Perfomance> perfomances { get; set; }
         public static Worker loggedWorker;
         public AdminToArtistPage()
         {
@@ -31,6 +32,7 @@ namespace Circus.Pages
             loggedWorker = DBConnection.loginedWorker;
             artists = DBConnection.circusDB.Worker.ToList();
             timetables = DBConnection.circusDB.Timetable.ToList();
+            perfomances = DBConnection.circusDB.Perfomance.ToList();
             this.DataContext = this;
             Refresh();
         }

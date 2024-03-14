@@ -67,14 +67,14 @@
                         <GridViewColumn Header ="Представление" Width="200">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox IsChecked="{Binding IsSelected}"/>
+                                    <TextBlock Text="{Binding perfomances.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header ="Дата" Width="160">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Perfomance.Date, StringFormat = dd.MM.yyyy}"/>
+                                    <TextBlock Text="{Binding Date, StringFormat = dd.MM.yyyy}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

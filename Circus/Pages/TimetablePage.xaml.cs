@@ -22,24 +22,16 @@ namespace Circus.Pages
     public partial class TimetablePage : Page
     {
         public static List<Timetable> timetables { get; set; }
+        public static List<Perfomance> perfomances { get; set; }
         public static Worker loggedWorker;
 
         public TimetablePage()
         {
             InitializeComponent();
-            timetables = DBConnection.circusDB.Timetable.Where(i => i.ID == loggedWorker.ID).ToList();
+            loggedWorker = DBConnection.loginedWorker;
+            timetables = DBConnection.circusDB.Timetable.Where(i => i.ID_Artist == loggedWorker.ID).ToList();
+            perfomances = DBConnection.circusDB.Perfomance.ToList();
             this.DataContext = this;
-            Refresh();
-        }
-
-        private void Refresh()
-        {
-            TimetablesLV.ItemsSource = DBConnection.circusDB.Timetable.ToList();
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            Refresh();
         }
 
         private void ChangeBTN_Click(object sender, RoutedEventArgs e)

@@ -17,10 +17,10 @@ namespace Circus.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Worker()
         {
-            this.Applicationn = new HashSet<Applicationn>();
             this.Cabinet = new HashSet<Cabinet>();
-            this.Taskk = new HashSet<Taskk>();
             this.Timetable = new HashSet<Timetable>();
+            this.Applicationn = new HashSet<Applicationn>();
+            this.Taskk = new HashSet<Taskk>();
         }
     
         public int ID { get; set; }
@@ -36,14 +36,14 @@ namespace Circus.DB
         public byte[] Photo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Applicationn> Applicationn { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cabinet> Cabinet { get; set; }
         public virtual Position Position { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Taskk> Taskk { get; set; }
         public virtual TypeOfArtist TypeOfArtist { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Timetable> Timetable { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Applicationn> Applicationn { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Taskk> Taskk { get; set; }
     }
 }
