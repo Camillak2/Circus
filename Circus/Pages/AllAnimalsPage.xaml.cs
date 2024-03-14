@@ -23,6 +23,7 @@ namespace Circus.Pages
     public partial class AllAnimalsPage : Page
     {
         public static List<Animal> animals { get; set; }
+        public static List<Worker> trainers { get; set; }
 
         public AllAnimalsPage()
         {

@@ -33,20 +33,20 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="3"
-    Grid.ColumnSpan="2"
-    Grid.Column="1"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"
-    Text="Персонал"/>
+            Grid.ColumnSpan="2"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Text="Персонал"/>
         <ComboBox x:Name="StaffCB"
-    Grid.Row="3"
-    Grid.Column="3"
-    Grid.ColumnSpan="5"
-    Width="400"
-    Height="40"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"
-    ItemsSource="{Binding trainers}">
+            Grid.Row="3"
+            Grid.Column="3"
+            Grid.ColumnSpan="5"
+            Width="400"
+            Height="40"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            ItemsSource="{Binding trainers}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -58,42 +58,58 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <TextBlock
-    Grid.Row="1"
-    Grid.Column="1"
-    Grid.ColumnSpan="2"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"
-    Text="Описание"/>
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Text="Описание"/>
         <TextBox x:Name="DescriptionTB"
-    Grid.Row="1"
-    Grid.Column="3"
-    Grid.RowSpan="2"
-    Grid.ColumnSpan="3"
-    Width="230"
-    Height="100"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"/>
-        <CheckBox Content="Выполнено"
-    x:Name="MyCheckBox"
-    IsChecked="False"
-    Grid.Row="4"
-    Grid.Column="1"
-    Grid.ColumnSpan="3"/>
+            Grid.Row="1"
+            Grid.Column="3"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="3"
+            Width="230"
+            Height="100"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+        <TextBlock Text="Статус"
+            Grid.Row="4"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"/>
+        <ComboBox x:Name="StatusCB"
+            Grid.Row="4"
+            Grid.Column="3"
+            Grid.ColumnSpan="3"
+            Width="230"
+            Height="40"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding statuses.Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <TextBlock
-    Grid.Row="1"
-    Grid.RowSpan="2"
-    Grid.Column="6"
-    Grid.ColumnSpan="2"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"
-    Text="Дата&#xA;Время"/>
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="6"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Text="Дата&#xA;Время"/>
         <DatePicker x:Name="DateTimeDP"
-    Grid.Row="1"
-    Grid.RowSpan="2"
-    Grid.Column="7"
-    Grid.ColumnSpan="3"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"/>
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="7"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"/>
         <Button x:Name="SaveBTN"
     Content="Добавить"
     Grid.Column="3"

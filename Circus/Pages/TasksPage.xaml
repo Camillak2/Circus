@@ -57,12 +57,10 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Done" Width="230">
+                        <GridViewColumn Header ="Статус" Width="230">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox IsChecked="{Binding IsCompleted,
-                                        UpdateSourceTrigger=PropertyChanged}"
-                                              Checked="CheckBox_Checked" />
+                                    <TextBlock Text="{Binding statuses.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -70,8 +68,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="SaveBTN"
-            Content="Сохранить"
+        <Button x:Name="EditBTN"
+            Content="Изменить"
             FontSize="20"
             Margin="10"
             Width="230"
@@ -80,7 +78,7 @@
             Grid.ColumnSpan="2"
             Grid.Row="8"
             Grid.RowSpan="2"
-            Click="SaveBTN_Click"/>
+            Click="EditBTN_Click"/>
         <Button x:Name="BackBTN"
             Content="Назад"
             FontSize="20"

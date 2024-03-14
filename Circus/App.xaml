@@ -63,28 +63,6 @@
             </Setter>
         </Style>
 
-        <Style TargetType="ComboBox">
-            <Setter Property="FontSize" Value="30"/>
-            <Setter Property="FontFamily" Value="Courier New"/>
-            <Setter Property="Background" Value="#d4adaa"/>
-            <Setter Property="BorderBrush" Value="#9a7673"/>
-            <Setter Property="Foreground" Value="#FF976C68"/>
-            <Setter Property="FontFamily" Value="Courier New"/>
-            <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ComboBox">
-                        <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="20">
-                            <ScrollViewer x:Name="PART_ContentHost" />
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
         <Style TargetType="PasswordBox">
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="FontFamily" Value="Book Antiqua"/>
@@ -121,11 +99,59 @@
             <Setter Property="FontFamily" Value="Courier New"/>
         </Style>
 
-        <Style TargetType="RadioButton">
+        <Style TargetType="ComboBox">
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="FontFamily" Value="Courier New"/>
-            <Setter Property="Background" Value="White"/>
+            <Setter Property="Background" Value="#d4adaa"/>
+            <Setter Property="BorderBrush" Value="#9a7673"/>
             <Setter Property="Foreground" Value="#FF976C68"/>
+            <Setter Property="FontFamily" Value="Courier New"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <Border Background="White" BorderBrush="Red" BorderThickness="1" CornerRadius="5">
+                                <DockPanel>
+                                    <ToggleButton Name="ToggleButton" Grid.Column="2" Focusable="false" ClickMode="Press" />
+                                    <ContentPresenter Name="ContentSite" IsHitTestVisible="False" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Margin="3,3,30,3" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                    <TextBox x:Name="PART_EditableTextBox" Style="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3,3,23,3" Focusable="True" Background="Transparent" Visibility="Hidden" IsReadOnly="{TemplateBinding IsReadOnly}" />
+                                    <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Slide">
+                                        <Grid Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                            <Border x:Name="DropDownBorder" Background="{DynamicResource {x:Static SystemColors.WindowBrush}}" BorderThickness="1" BorderBrush="Red" />
+                                            <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                                <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                            </ScrollViewer>
+                                        </Grid>
+                                    </Popup>
+                                </DockPanel>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
+
+        <!--<Style TargetType="ComboBox">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="Courier New"/>
+            <Setter Property="Background" Value="#d4adaa"/>
+            <Setter Property="BorderBrush" Value="#9a7673"/>
+            <Setter Property="Foreground" Value="#FF976C68"/>
+            <Setter Property="FontFamily" Value="Courier New"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="20">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+        
     </Application.Resources>
 </Application>

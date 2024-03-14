@@ -17,8 +17,9 @@ namespace Circus.DB
         public int ID { get; set; }
         public Nullable<int> ID_Artist { get; set; }
         public string Comment { get; set; }
-        public Nullable<bool> Done { get; set; }
+        public Nullable<int> ID_Done { get; set; }
     
         public virtual Worker Worker { get; set; }
+        public virtual Status Status { get; set; }
     }
 }

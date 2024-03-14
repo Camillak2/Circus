@@ -50,10 +50,12 @@ namespace Circus.Windowsss
                     task.Description = DescriptionTB.Text.Trim();
                     task.DateTime = DateTime.Now;
                     task.DateTime = DateTimeDP.SelectedDate;
-                    MyCheckBox.IsChecked = false;
-                    task.DoneOrNo = MyCheckBox.IsChecked.Value;
+
                     var a = StaffCB.SelectedItem as Worker;
                     task.ID_ServiceStaff = a.ID;
+
+                    var b = StatusCB.SelectedItem as Status;
+                    task.ID_Done = b.ID;
 
                     DBConnection.circusDB.Taskk.Add(task);
                     DBConnection.circusDB.SaveChanges();

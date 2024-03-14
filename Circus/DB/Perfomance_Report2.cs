@@ -18,7 +18,7 @@ namespace Circus.DB
         public Nullable<int> ID_Perfomance2 { get; set; }
         public Nullable<int> ID_Report2 { get; set; }
     
-        public virtual Report2 Report2 { get; set; }
         public virtual Perfomance Perfomance { get; set; }
+        public virtual Report2 Report2 { get; set; }
     }
 }

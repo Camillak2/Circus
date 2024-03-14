@@ -105,7 +105,11 @@
                         <GridViewColumn Header ="Дрессировщик" Width="100">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Worker.Surname}"/>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding trainers.Surname}"/>
+                                        <TextBlock Text="{Binding trainers.Name}"/>
+                                        <TextBlock Text="{Binding trainers.Patronymic}"/>
+                                    </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

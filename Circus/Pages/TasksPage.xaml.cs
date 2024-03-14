@@ -1,4 +1,5 @@
 ﻿using Circus.DB;
+using Circus.Windowsss;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace Circus.Pages
     public partial class TasksPage : Page
     {
         public static List<Taskk> tasks { get; set; }
+        public static Taskk taskk { get; set; }
+        public static List<Status> statuses { get; set; }
         public static Worker loggedWorker;
 
         public TasksPage()
@@ -32,14 +35,10 @@ namespace Circus.Pages
             this.DataContext = this;
         }
 
-        private void SaveBTN_Click(object sender, RoutedEventArgs e)
+        private void EditBTN_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            tasks.
+            EditTaskStatusWindow editTaskStatusWindow = new EditTaskStatusWindow();
+            editTaskStatusWindow.Show();
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)

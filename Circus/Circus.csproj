@@ -142,6 +142,9 @@
     <Compile Include="DB\Report2.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\Status.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\sysdiagrams.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
@@ -219,6 +222,9 @@
     </Compile>
     <Compile Include="Windowsss\EditAnimalWindow.xaml.cs">
       <DependentUpon>EditAnimalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windowsss\EditTaskStatusWindow.xaml.cs">
+      <DependentUpon>EditTaskStatusWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windowsss\EditTaskWindow.xaml.cs">
       <DependentUpon>EditTaskWindow.xaml</DependentUpon>
@@ -326,6 +332,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windowsss\EditAnimalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windowsss\EditTaskStatusWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

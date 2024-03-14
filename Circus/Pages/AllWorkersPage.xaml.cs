@@ -24,6 +24,7 @@ namespace Circus.Pages
     public partial class AllWorkersPage : Page
     {
         public static List<Worker> workers { get; set; }
+        public static List<TypeOfArtist> typeOfArtists { get; set; }
         public static Worker loggedWorker;
 
         public AllWorkersPage()
