@@ -12,15 +12,14 @@ namespace Circus.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Taskk
+    public partial class TimetableForAnimal
     {
         public int ID { get; set; }
-        public Nullable<int> ID_ServiceStaff { get; set; }
+        public Nullable<int> ID_Animal { get; set; }
         public string Description { get; set; }
-        public Nullable<int> ID_Done { get; set; }
-        public Nullable<System.DateTime> DateTime { get; set; }
+        public Nullable<int> ID_Status { get; set; }
     
+        public virtual Animal Animal { get; set; }
         public virtual Status Status { get; set; }
-        public virtual Worker Worker { get; set; }
     }
 }

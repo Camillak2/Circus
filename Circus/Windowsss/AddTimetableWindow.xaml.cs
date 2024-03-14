@@ -22,10 +22,9 @@ namespace Circus.Windowsss
     {
         public static List<Worker> artists { get; set; }
         public static List<Perfomance> perfomances { get; set; }
+        public static Perfomance perfomance { get; set; }
         public static List<Timetable> timetables { get; set; }
         public static Timetable timetable = new Timetable();
-
-        public static Perfomance contextPerfomance;
 
         public AddTimetableWindow()
         {
@@ -34,27 +33,35 @@ namespace Circus.Windowsss
             perfomances = DBConnection.circusDB.Perfomance.ToList();
             artists = DBConnection.circusDB.Worker.Where(i => i.ID_Position == 2).ToList();
 
-            contextPerfomance = DBConnection.currentPerfomance;
-
             timetables = DBConnection.circusDB.Timetable.ToList();
-            StartDateDP.SelectedDate = contextPerfomance.StartDate;
-            EndDateDP.SelectedDate = contextPerfomance.EndDate;
 
             this.DataContext = this;
+        }
+
+        private void PerfomanceCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (PerfomanceCB.SelectedItem != null)
+            {
+                Perfomance selectedPerformance = PerfomanceCB.SelectedItem as Perfomance;
+                StartDateDP.SelectedDate = selectedPerformance.StartDate;
+
+                EndDateDP.SelectedDate = selectedPerformance.EndDate;
+            }
         }
 
         private void AddTimetableBTN_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                StringBuilder error = new StringBuilder();
+                //StringBuilder error = new StringBuilder();
                 if (string.IsNullOrWhiteSpace(ArtistCB.Text) || string.IsNullOrWhiteSpace(PerfomanceCB.Text) || string.IsNullOrWhiteSpace(TimeTB.Text))
                 {
-                    error.AppendLine("Заполните все поля!");
+                    //error.AppendLine("Заполните все поля!");
+                    MessageBox.Show("Заполните все поля!");
                 }
-                if (error.Length > 0)
+                else if (DateDP.SelectedDate < StartDateDP.SelectedDate || DateDP.SelectedDate > EndDateDP.SelectedDate)
                 {
-                    MessageBox.Show(error.ToString());
+                    MessageBox.Show("Выберите правильную дату!");
                 }
                 else
                 {
@@ -66,15 +73,6 @@ namespace Circus.Windowsss
 
                     timetable.Time = TimeTB.Text.Trim();
 
-                    if (DateDP.SelectedDate > StartDateDP.SelectedDate && DateDP.SelectedDate < EndDateDP.SelectedDate)
-                    {
-                        timetable.Date = DateDP.SelectedDate;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Выберите правильную дату!");
-                    }
-
                     DBConnection.circusDB.Timetable.Add(timetable);
                     DBConnection.circusDB.SaveChanges();
                     Close();
@@ -83,6 +81,7 @@ namespace Circus.Windowsss
             catch
             {
                 MessageBox.Show("Заполните все поля!");
+                //e.Handled = true;
             }
         }
 
@@ -90,5 +89,6 @@ namespace Circus.Windowsss
         {
             Close();
         }
+
     }
 }

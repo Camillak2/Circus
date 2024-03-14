@@ -99,7 +99,7 @@
             <Setter Property="FontFamily" Value="Courier New"/>
         </Style>
 
-        <Style TargetType="ComboBox">
+        <!--<Style TargetType="ComboBox">
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="FontFamily" Value="Courier New"/>
             <Setter Property="Background" Value="#d4adaa"/>
@@ -129,7 +129,7 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
+        </Style>-->
 
         <!--<Style TargetType="ComboBox">
             <Setter Property="FontSize" Value="30"/>

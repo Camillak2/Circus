@@ -53,13 +53,13 @@
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header ="ФИО" Width="300">
+                        <GridViewColumn Header ="Артист" Width="300">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding Surname}"/>
-                                        <TextBlock Text="{Binding Name}"/>
-                                        <TextBlock Text="{Binding Patronymic}"/>
+                                        <TextBlock Text="{Binding artists.Surname}"/>
+                                        <TextBlock Text="{Binding artists.Name}"/>
+                                        <TextBlock Text="{Binding artists.Patronymic}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>

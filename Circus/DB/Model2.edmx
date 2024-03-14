@@ -172,6 +172,15 @@
           <Property Name="Date" Type="date" />
           <Property Name="Time" Type="nvarchar" MaxLength="5" />
         </EntityType>
+        <EntityType Name="TimetableForAnimal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Animal" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_Status" Type="int" />
+        </EntityType>
         <EntityType Name="TypeOfArtist">
           <Key>
             <PropertyRef Name="ID" />
@@ -376,6 +385,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TimetableForAnimal_Animal">
+          <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+          <End Role="TimetableForAnimal" Type="Self.TimetableForAnimal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animal">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TimetableForAnimal">
+              <PropertyRef Name="ID_Animal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimetableForAnimal_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="TimetableForAnimal" Type="Self.TimetableForAnimal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TimetableForAnimal">
+              <PropertyRef Name="ID_Status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Worker_To_Position">
           <End Role="Position" Type="Self.Position" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -420,6 +453,7 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Taskk" EntityType="Self.Taskk" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Timetable" EntityType="Self.Timetable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimetableForAnimal" EntityType="Self.TimetableForAnimal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TypeOfArtist" EntityType="Self.TypeOfArtist" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Worker" EntityType="Self.Worker" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CostumeDept" EntityType="Self.CostumeDept" store:Type="Tables" store:Schema="dbo">
@@ -494,6 +528,14 @@
             <End Role="Worker" EntitySet="Worker" />
             <End Role="Timetable" EntitySet="Timetable" />
           </AssociationSet>
+          <AssociationSet Name="FK_TimetableForAnimal_Animal" Association="Self.FK_TimetableForAnimal_Animal">
+            <End Role="Animal" EntitySet="Animal" />
+            <End Role="TimetableForAnimal" EntitySet="TimetableForAnimal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimetableForAnimal_Status" Association="Self.FK_TimetableForAnimal_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="TimetableForAnimal" EntitySet="TimetableForAnimal" />
+          </AssociationSet>
           <AssociationSet Name="FK_Worker_To_Position" Association="Self.FK_Worker_To_Position">
             <End Role="Position" EntitySet="Position" />
             <End Role="Worker" EntitySet="Worker" />
@@ -523,6 +565,7 @@
           <NavigationProperty Name="AnimalType" Relationship="Self.FK_Animal_AnimalType" FromRole="Animal" ToRole="AnimalType" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Animal_Gender" FromRole="Animal" ToRole="Gender" />
           <NavigationProperty Name="Cage" Relationship="Self.FK_Cage_Animal" FromRole="Animal" ToRole="Cage" />
+          <NavigationProperty Name="TimetableForAnimal" Relationship="Circus_SagdievaModel.FK_TimetableForAnimal_Animal" FromRole="Animal" ToRole="TimetableForAnimal" />
         </EntityType>
         <EntityType Name="AnimalType">
           <Key>
@@ -531,6 +574,17 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Animal" Relationship="Self.FK_Animal_AnimalType" FromRole="AnimalType" ToRole="Animal" />
+        </EntityType>
+        <EntityType Name="Applicationn">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Artist" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Done" Type="Int32" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_Application_Worker" FromRole="Applicationn" ToRole="Worker" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Applicationn_Done" FromRole="Applicationn" ToRole="Status" />
         </EntityType>
         <EntityType Name="Cabinet">
           <Key>
@@ -627,6 +681,16 @@
           <Property Name="Year" Type="Int32" />
           <NavigationProperty Name="Perfomance_Report2" Relationship="Self.FK_Perfomance_Report2_Report21" FromRole="Report2" ToRole="Perfomance_Report2" />
         </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Applicationn" Relationship="Self.FK_Applicationn_Done" FromRole="Status" ToRole="Applicationn" />
+          <NavigationProperty Name="Taskk" Relationship="Self.FK_Taskk_Done" FromRole="Status" ToRole="Taskk" />
+          <NavigationProperty Name="TimetableForAnimal" Relationship="Circus_SagdievaModel.FK_TimetableForAnimal_Status" FromRole="Status" ToRole="TimetableForAnimal" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -636,6 +700,18 @@
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Taskk">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_ServiceStaff" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Done" Type="Int32" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Taskk_Done" FromRole="Taskk" ToRole="Status" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_Task_Worker" FromRole="Taskk" ToRole="Worker" />
         </EntityType>
         <EntityType Name="Timetable">
           <Key>
@@ -673,12 +749,12 @@
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Applicationn" Relationship="Self.FK_Application_Worker" FromRole="Worker" ToRole="Applicationn" />
           <NavigationProperty Name="Cabinet" Relationship="Self.FK_Cabinet_Worker" FromRole="Worker" ToRole="Cabinet" />
           <NavigationProperty Name="Position" Relationship="Self.FK_Worker_To_Position" FromRole="Worker" ToRole="Position" />
+          <NavigationProperty Name="Taskk" Relationship="Self.FK_Task_Worker" FromRole="Worker" ToRole="Taskk" />
           <NavigationProperty Name="Timetable" Relationship="Self.FK_Timetable_Worker" FromRole="Worker" ToRole="Timetable" />
           <NavigationProperty Name="TypeOfArtist" Relationship="Self.FK_Worker_TypeOfArtist" FromRole="Worker" ToRole="TypeOfArtist" />
-          <NavigationProperty Name="Applicationn" Relationship="Circus_SagdievaModel.FK_Application_Worker" FromRole="Worker" ToRole="Applicationn" />
-          <NavigationProperty Name="Taskk" Relationship="Circus_SagdievaModel.FK_Task_Worker" FromRole="Worker" ToRole="Taskk" />
         </EntityType>
         <EntityType Name="CostumeDept">
           <Key>
@@ -729,6 +805,30 @@
             </Principal>
             <Dependent Role="Cage">
               <PropertyRef Name="ID_Animal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Application_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+          <End Role="Applicationn" Type="Self.Applicationn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applicationn">
+              <PropertyRef Name="ID_Artist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Applicationn_Done">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Applicationn" Type="Self.Applicationn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applicationn">
+              <PropertyRef Name="ID_Done" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -830,6 +930,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Taskk_Done">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Taskk" Type="Self.Taskk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Taskk">
+              <PropertyRef Name="ID_Done" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+          <End Role="Taskk" Type="Self.Taskk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Taskk">
+              <PropertyRef Name="ID_ServiceStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Timetable_Worker">
           <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
           <End Role="Timetable" Type="Self.Timetable" Multiplicity="*" />
@@ -857,6 +981,7 @@
         <EntityContainer Name="Circus_SagdievaEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Animal" EntityType="Self.Animal" />
           <EntitySet Name="AnimalType" EntityType="Self.AnimalType" />
+          <EntitySet Name="Applicationn" EntityType="Self.Applicationn" />
           <EntitySet Name="Cabinet" EntityType="Self.Cabinet" />
           <EntitySet Name="Cage" EntityType="Self.Cage" />
           <EntitySet Name="DressingRoom" EntityType="Self.DressingRoom" />
@@ -867,7 +992,9 @@
           <EntitySet Name="Position" EntityType="Self.Position" />
           <EntitySet Name="Report1" EntityType="Self.Report1" />
           <EntitySet Name="Report2" EntityType="Self.Report2" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Taskk" EntityType="Self.Taskk" />
           <EntitySet Name="Timetable" EntityType="Self.Timetable" />
           <EntitySet Name="TypeOfArtist" EntityType="Self.TypeOfArtist" />
           <EntitySet Name="Worker" EntityType="Self.Worker" />
@@ -884,6 +1011,14 @@
           <AssociationSet Name="FK_Cage_Animal" Association="Self.FK_Cage_Animal">
             <End Role="Animal" EntitySet="Animal" />
             <End Role="Cage" EntitySet="Cage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Application_Worker" Association="Self.FK_Application_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Applicationn" EntitySet="Applicationn" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Applicationn_Done" Association="Self.FK_Applicationn_Done">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Applicationn" EntitySet="Applicationn" />
           </AssociationSet>
           <AssociationSet Name="FK_Cabinet_Worker" Association="Self.FK_Cabinet_Worker">
             <End Role="Worker" EntitySet="Worker" />
@@ -917,6 +1052,14 @@
             <End Role="Report1" EntitySet="Report1" />
             <End Role="Perfomance_Report1" EntitySet="Perfomance_Report1" />
           </AssociationSet>
+          <AssociationSet Name="FK_Taskk_Done" Association="Self.FK_Taskk_Done">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Taskk" EntitySet="Taskk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Worker" Association="Self.FK_Task_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Taskk" EntitySet="Taskk" />
+          </AssociationSet>
           <AssociationSet Name="FK_Timetable_Worker" Association="Self.FK_Timetable_Worker">
             <End Role="Worker" EntitySet="Worker" />
             <End Role="Timetable" EntitySet="Timetable" />
@@ -925,103 +1068,48 @@
             <End Role="TypeOfArtist" EntitySet="TypeOfArtist" />
             <End Role="Worker" EntitySet="Worker" />
           </AssociationSet>
-          <EntitySet Name="Applicationn" EntityType="Circus_SagdievaModel.Applicationn" />
-          <EntitySet Name="Taskk" EntityType="Circus_SagdievaModel.Taskk" />
-          <AssociationSet Name="FK_Application_Worker" Association="Circus_SagdievaModel.FK_Application_Worker">
-            <End Role="Worker" EntitySet="Worker" />
-            <End Role="Applicationn" EntitySet="Applicationn" />
+          <EntitySet Name="TimetableForAnimal" EntityType="Circus_SagdievaModel.TimetableForAnimal" />
+          <AssociationSet Name="FK_TimetableForAnimal_Animal" Association="Circus_SagdievaModel.FK_TimetableForAnimal_Animal">
+            <End Role="Animal" EntitySet="Animal" />
+            <End Role="TimetableForAnimal" EntitySet="TimetableForAnimal" />
           </AssociationSet>
-          <AssociationSet Name="FK_Task_Worker" Association="Circus_SagdievaModel.FK_Task_Worker">
-            <End Role="Worker" EntitySet="Worker" />
-            <End Role="Taskk" EntitySet="Taskk" />
-          </AssociationSet>
-          <EntitySet Name="Status" EntityType="Circus_SagdievaModel.Status" />
-          <AssociationSet Name="FK_Applicationn_Done" Association="Circus_SagdievaModel.FK_Applicationn_Done">
+          <AssociationSet Name="FK_TimetableForAnimal_Status" Association="Circus_SagdievaModel.FK_TimetableForAnimal_Status">
             <End Role="Status" EntitySet="Status" />
-            <End Role="Applicationn" EntitySet="Applicationn" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Taskk_Done" Association="Circus_SagdievaModel.FK_Taskk_Done">
-            <End Role="Status" EntitySet="Status" />
-            <End Role="Taskk" EntitySet="Taskk" />
+            <End Role="TimetableForAnimal" EntitySet="TimetableForAnimal" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Applicationn">
+        <EntityType Name="TimetableForAnimal">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_Artist" Type="Int32" />
-          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ID_Done" Type="Int32" />
-          <NavigationProperty Name="Worker" Relationship="Circus_SagdievaModel.FK_Application_Worker" FromRole="Applicationn" ToRole="Worker" />
-          <NavigationProperty Name="Status" Relationship="Circus_SagdievaModel.FK_Applicationn_Done" FromRole="Applicationn" ToRole="Status" />
+          <Property Name="ID_Animal" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Status" Type="Int32" />
+          <NavigationProperty Name="Animal" Relationship="Circus_SagdievaModel.FK_TimetableForAnimal_Animal" FromRole="TimetableForAnimal" ToRole="Animal" />
+          <NavigationProperty Name="Status" Relationship="Circus_SagdievaModel.FK_TimetableForAnimal_Status" FromRole="TimetableForAnimal" ToRole="Status" />
         </EntityType>
-        <EntityType Name="Taskk">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_ServiceStaff" Type="Int32" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ID_Done" Type="Int32" />
-          <Property Name="DateTime" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Worker" Relationship="Circus_SagdievaModel.FK_Task_Worker" FromRole="Taskk" ToRole="Worker" />
-          <NavigationProperty Name="Status" Relationship="Circus_SagdievaModel.FK_Taskk_Done" FromRole="Taskk" ToRole="Status" />
-        </EntityType>
-        <Association Name="FK_Application_Worker">
-          <End Type="Circus_SagdievaModel.Worker" Role="Worker" Multiplicity="0..1" />
-          <End Type="Circus_SagdievaModel.Applicationn" Role="Applicationn" Multiplicity="*" />
+        <Association Name="FK_TimetableForAnimal_Animal">
+          <End Type="Circus_SagdievaModel.Animal" Role="Animal" Multiplicity="0..1" />
+          <End Type="Circus_SagdievaModel.TimetableForAnimal" Role="TimetableForAnimal" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Worker">
+            <Principal Role="Animal">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Applicationn">
-              <PropertyRef Name="ID_Artist" />
+            <Dependent Role="TimetableForAnimal">
+              <PropertyRef Name="ID_Animal" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Task_Worker">
-          <End Type="Circus_SagdievaModel.Worker" Role="Worker" Multiplicity="0..1" />
-          <End Type="Circus_SagdievaModel.Taskk" Role="Taskk" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Worker">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Taskk">
-              <PropertyRef Name="ID_ServiceStaff" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Status">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Applicationn" Relationship="Circus_SagdievaModel.FK_Applicationn_Done" FromRole="Status" ToRole="Applicationn" />
-          <NavigationProperty Name="Taskk" Relationship="Circus_SagdievaModel.FK_Taskk_Done" FromRole="Status" ToRole="Taskk" />
-        </EntityType>
-        <Association Name="FK_Applicationn_Done">
+        <Association Name="FK_TimetableForAnimal_Status">
           <End Type="Circus_SagdievaModel.Status" Role="Status" Multiplicity="0..1" />
-          <End Type="Circus_SagdievaModel.Applicationn" Role="Applicationn" Multiplicity="*" />
+          <End Type="Circus_SagdievaModel.TimetableForAnimal" Role="TimetableForAnimal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Status">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Applicationn">
-              <PropertyRef Name="ID_Done" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Taskk_Done">
-          <End Type="Circus_SagdievaModel.Status" Role="Status" Multiplicity="0..1" />
-          <End Type="Circus_SagdievaModel.Taskk" Role="Taskk" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Status">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Taskk">
-              <PropertyRef Name="ID_Done" />
+            <Dependent Role="TimetableForAnimal">
+              <PropertyRef Name="ID_Status" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1051,6 +1139,16 @@
               <MappingFragment StoreEntitySet="AnimalType">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applicationn">
+            <EntityTypeMapping TypeName="Circus_SagdievaModel.Applicationn">
+              <MappingFragment StoreEntitySet="Applicationn">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Artist" ColumnName="ID_Artist" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ID_Done" ColumnName="ID_Done" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1146,6 +1244,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="Circus_SagdievaModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="Circus_SagdievaModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -1154,6 +1260,17 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Taskk">
+            <EntityTypeMapping TypeName="Circus_SagdievaModel.Taskk">
+              <MappingFragment StoreEntitySet="Taskk">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_ServiceStaff" ColumnName="ID_ServiceStaff" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID_Done" ColumnName="ID_Done" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1210,31 +1327,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Applicationn">
-            <EntityTypeMapping TypeName="Circus_SagdievaModel.Applicationn">
-              <MappingFragment StoreEntitySet="Applicationn">
-                <ScalarProperty Name="ID_Done" ColumnName="ID_Done" />
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
-                <ScalarProperty Name="ID_Artist" ColumnName="ID_Artist" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Taskk">
-            <EntityTypeMapping TypeName="Circus_SagdievaModel.Taskk">
-              <MappingFragment StoreEntitySet="Taskk">
-                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
-                <ScalarProperty Name="ID_Done" ColumnName="ID_Done" />
+          <EntitySetMapping Name="TimetableForAnimal">
+            <EntityTypeMapping TypeName="Circus_SagdievaModel.TimetableForAnimal">
+              <MappingFragment StoreEntitySet="TimetableForAnimal">
+                <ScalarProperty Name="ID_Status" ColumnName="ID_Status" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="ID_ServiceStaff" ColumnName="ID_ServiceStaff" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Status">
-            <EntityTypeMapping TypeName="Circus_SagdievaModel.Status">
-              <MappingFragment StoreEntitySet="Status">
-                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Animal" ColumnName="ID_Animal" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

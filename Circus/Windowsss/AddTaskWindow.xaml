@@ -48,7 +48,7 @@
             Height="40"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            ItemsSource="{Binding trainers}">
+            ItemsSource="{Binding staffs}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -88,11 +88,12 @@
             Width="230"
             Height="40"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center">
+            VerticalAlignment="Center"
+            ItemsSource="{Binding statuses}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding statuses.Name}"/>
+                        <TextBlock Text="{Binding Name}"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>

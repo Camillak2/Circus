@@ -20,15 +20,17 @@ namespace Circus.Windowsss
     /// </summary>
     public partial class AddTaskWindow : Window
     {
-        public static List<Worker> workers { get; set; }
+        public static List<Worker> staffs { get; set; }
         public static List<Taskk> tasks { get; set; }
+        public static List<Status> statuses { get; set; }
         public static Taskk task = new Taskk();
 
         public AddTaskWindow()
         {
             InitializeComponent();
-            workers = DBConnection.circusDB.Worker.Where(i => i.ID_Position == 4).ToList();
+            staffs = DBConnection.circusDB.Worker.Where(i => i.ID_Position == 4).ToList();
             tasks = DBConnection.circusDB.Taskk.ToList();
+            statuses = DBConnection.circusDB.Status.ToList();
             this.DataContext = this;
         }
 
@@ -37,7 +39,7 @@ namespace Circus.Windowsss
             try
             {
                 StringBuilder error = new StringBuilder();
-                if (string.IsNullOrWhiteSpace(StaffCB.Text) || string.IsNullOrWhiteSpace(DescriptionTB.Text))
+                if (string.IsNullOrWhiteSpace(StaffCB.Text) || string.IsNullOrWhiteSpace(DescriptionTB.Text) || string.IsNullOrWhiteSpace(StatusCB.Text))
                 {
                     error.AppendLine("Заполните все поля!");
                 }

@@ -24,6 +24,7 @@ namespace Circus.Pages
     {
         public static List<Worker> staffs { get; set; }
         public static List<Taskk> tasks { get; set; }
+        public static List<Status> statuses { get; set; }
         public static Worker loggedWorker;
         public AdminToServiceStaffPage()
         {
@@ -31,6 +32,7 @@ namespace Circus.Pages
             loggedWorker = DBConnection.loginedWorker;
             staffs = DBConnection.circusDB.Worker.ToList();
             tasks = DBConnection.circusDB.Taskk.ToList();
+            statuses = DBConnection.circusDB.Status.ToList();
             this.DataContext = this;
             Refresh();
         }
