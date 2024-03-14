@@ -142,6 +142,9 @@
     <Compile Include="DB\Report2.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="DB\sysdiagrams.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
     <Compile Include="DB\Taskk.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
@@ -169,6 +172,9 @@
     <Compile Include="Pages\AllWorkersPage.xaml.cs">
       <DependentUpon>AllWorkersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ApplicationsPage.xaml.cs">
+      <DependentUpon>ApplicationsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
     </Compile>
@@ -195,6 +201,9 @@
     </Compile>
     <Compile Include="Windowsss\AddAnimalWindow.xaml.cs">
       <DependentUpon>AddAnimalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windowsss\AddApplicationWindow.xaml.cs">
+      <DependentUpon>AddApplicationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windowsss\AddTaskWindow.xaml.cs">
       <DependentUpon>AddTaskWindow.xaml</DependentUpon>
@@ -256,6 +265,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ApplicationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AuthorizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -289,6 +302,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windowsss\AddAnimalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windowsss\AddApplicationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -114,6 +114,13 @@
             <Setter Property="FontFamily" Value="Courier New"/>
         </Style>
 
+        <Style TargetType="DatePicker">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="Courier New"/>
+            <Setter Property="Foreground" Value="#FF976C68"/>
+            <Setter Property="FontFamily" Value="Courier New"/>
+        </Style>
+
         <Style TargetType="RadioButton">
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="FontFamily" Value="Courier New"/>

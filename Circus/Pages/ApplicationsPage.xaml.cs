@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Circus.Windowsss;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,23 +17,24 @@ using System.Windows.Shapes;
 namespace Circus.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainMenuPageForTrainer.xaml
+    /// Логика взаимодействия для ApplicationsPage.xaml
     /// </summary>
-    public partial class MainMenuPageForTrainer : Page
+    public partial class ApplicationsPage : Page
     {
-        public MainMenuPageForTrainer()
+        public ApplicationsPage()
         {
             InitializeComponent();
         }
 
-        private void TimetableBTN_Click(object sender, RoutedEventArgs e)
+        private void ApplicationBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new TimetableForAnimalsPage());
+            AddApplicationWindow addApplicationWindow = new AddApplicationWindow();
+            addApplicationWindow.ShowDialog();
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AuthorizationPage());
+            NavigationService.Navigate(new TimetablePage());
         }
     }
 }

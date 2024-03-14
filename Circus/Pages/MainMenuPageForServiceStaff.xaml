@@ -39,28 +39,28 @@
         VerticalAlignment="Center"
         FontSize="40"/>
         <TextBlock Text="Пользователь:"
-Grid.Column="0"
-Margin="15"
-Grid.ColumnSpan="2"
-Grid.Row="2" Grid.RowSpan="2"
-HorizontalAlignment="Left"
-VerticalAlignment="Center"/>
+            Grid.Column="0"
+            Margin="15"
+            Grid.ColumnSpan="2"
+            Grid.Row="2" Grid.RowSpan="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"/>
         <Border CornerRadius="20"
-    Background="#d4adaa"
-    BorderBrush="#9a7673"
-    BorderThickness="2"
-    Grid.Column="2"
-    Grid.ColumnSpan="4"
-    Grid.Row="2"
-    Grid.RowSpan="2"
-    Width="500"
-    Height="40">
+            Background="#d4adaa"
+            BorderBrush="#9a7673"
+            BorderThickness="2"
+            Grid.Column="2"
+            Grid.ColumnSpan="4"
+            Grid.Row="2"
+            Grid.RowSpan="2"
+            Width="500"
+            Height="40">
             <TextBlock
-    x:Name="UserTB"
-    Width="500"
-    Height="40"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"/>
+                x:Name="UserTB"
+                Width="500"
+                Height="40"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"/>
         </Border>
 
         <TextBlock Text="Логин:"

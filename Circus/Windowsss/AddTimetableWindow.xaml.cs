@@ -25,6 +25,8 @@ namespace Circus.Windowsss
         public static List<Timetable> timetables { get; set; }
         public static Timetable timetable = new Timetable();
 
+        Perfomance currentPerfomance;
+
         public AddTimetableWindow()
         {
             InitializeComponent();
@@ -33,6 +35,10 @@ namespace Circus.Windowsss
             artists = DBConnection.circusDB.Worker.Where(i => i.ID_Position == 2).ToList();
 
             timetables = DBConnection.circusDB.Timetable.ToList();
+            StartDateDP.SelectedDate = currentPerfomance.StartDate;
+            EndDateDP.SelectedDate = currentPerfomance.EndDate;
+
+
             this.DataContext = this;
         }
 
@@ -58,6 +64,17 @@ namespace Circus.Windowsss
 
                     var b = PerfomanceCB.SelectedItem as Perfomance;
                     timetable.ID_Perfomance = a.ID;
+
+                    timetable.Time = TimeTB.Text.Trim();
+
+                    if (DateDP.SelectedDate > StartDateDP.SelectedDate && DateDP.SelectedDate < EndDateDP.SelectedDate)
+                    {
+                        timetable.Date = DateDP.SelectedDate;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Выберите правильную дату!");
+                    }
 
                     DBConnection.circusDB.Timetable.Add(timetable);
                     DBConnection.circusDB.SaveChanges();

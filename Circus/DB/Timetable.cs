@@ -17,7 +17,8 @@ namespace Circus.DB
         public int ID { get; set; }
         public Nullable<int> ID_Perfomance { get; set; }
         public Nullable<int> ID_Artist { get; set; }
-        public Nullable<System.TimeSpan> time { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
+        public string Time { get; set; }
     
         public virtual Perfomance Perfomance { get; set; }
         public virtual Worker Worker { get; set; }

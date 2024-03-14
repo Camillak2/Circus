@@ -24,6 +24,7 @@ namespace Circus.Windowsss
     {
         public static List<Worker> artists { get; set; }
         public static List<Timetable> timetables { get; set; }
+
         Timetable contextTimetable;
         public EditTimetableWindow(Timetable timetable)
         {

@@ -25,7 +25,9 @@ namespace Circus.DB
         public int ID { get; set; }
         public string Name { get; set; }
         public Nullable<int> ID_Type { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
+        public string Duration { get; set; }
     
         public virtual PerfomanceType PerfomanceType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

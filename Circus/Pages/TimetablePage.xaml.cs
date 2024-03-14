@@ -22,11 +22,12 @@ namespace Circus.Pages
     public partial class TimetablePage : Page
     {
         public static List<Timetable> timetables { get; set; }
+        public static Worker loggedWorker;
 
         public TimetablePage()
         {
             InitializeComponent();
-            timetables = DBConnection.circusDB.Timetable.ToList();
+            timetables = DBConnection.circusDB.Timetable.Where(i => i.ID == loggedWorker.ID).ToList();
             this.DataContext = this;
             Refresh();
         }
@@ -43,7 +44,7 @@ namespace Circus.Pages
 
         private void ChangeBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ApplicationsPage());
         }
         
         private void BackBTN_Click(object sender, RoutedEventArgs e)
