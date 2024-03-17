@@ -82,6 +82,12 @@ namespace Circus.Pages
             Refresh();
         }
 
+        private void ArtistCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var a = ArtistCB.SelectedItem as Worker;
+            TimetablesLV.ItemsSource = new List<Timetable>(DBConnection.circusDB.Timetable.Where(x => x.ID_Artist == a.ID).ToList());
+        }
+
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new MainMenuPageForAdmin());

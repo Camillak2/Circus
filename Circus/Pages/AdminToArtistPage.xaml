@@ -47,7 +47,7 @@
             Grid.Column="0"
             Grid.ColumnSpan="6"
             Grid.Row="2"
-            Grid.RowSpan="6"
+            Grid.RowSpan="5"
             MaxHeight="500"
             MaxWidth="780">
             <ListView.View>
@@ -89,6 +89,23 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <TextBlock x:Name="ArtistTB"
+            Text="Арстист"
+            Margin="10"
+            Height="38"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Center"
+            Grid.Row="7"
+            Grid.RowSpan="2"/>
+        <ComboBox x:Name="ArtistCB"
+            FontSize="20"
+            Width="500"
+            Height="38"
+            Grid.Column="2"
+            Grid.ColumnSpan="4"
+            Grid.Row="7"
+            Grid.RowSpan="2"/>
         <Button x:Name="EditTimetableBTN"
             Content="Изменить"
             FontSize="20"

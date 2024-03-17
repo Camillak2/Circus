@@ -42,10 +42,10 @@ namespace Circus.DB
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Taskk> Taskk { get; set; }
         public virtual DbSet<Timetable> Timetable { get; set; }
+        public virtual DbSet<TimetableForAnimal> TimetableForAnimal { get; set; }
         public virtual DbSet<TypeOfArtist> TypeOfArtist { get; set; }
         public virtual DbSet<Worker> Worker { get; set; }
         public virtual DbSet<CostumeDept> CostumeDept { get; set; }
         public virtual DbSet<Perfomance_Report1> Perfomance_Report1 { get; set; }
-        public virtual DbSet<TimetableForAnimal> TimetableForAnimal { get; set; }
     }
 }

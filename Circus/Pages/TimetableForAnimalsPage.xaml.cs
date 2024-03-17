@@ -22,14 +22,16 @@ namespace Circus.Pages
     /// </summary>
     public partial class TimetableForAnimalsPage : Page
     {
-        public static List<Worker> workers { get; set; }
+        public static List<TimetableForAnimal> timetableForAnimals { get; set; }
+        public static List<Status> statuses { get; set; }
         public static Worker loggedWorker;
 
         public TimetableForAnimalsPage()
         {
             InitializeComponent();
             loggedWorker = DBConnection.loginedWorker;
-            workers = DBConnection.circusDB.Worker.ToList();
+            timetableForAnimals = DBConnection.circusDB.TimetableForAnimal.ToList();
+            statuses = DBConnection.circusDB.Status.ToList();
             this.DataContext = this;
             Refresh();
         }
