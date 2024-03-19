@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Circus.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,15 @@ namespace Circus.Pages
     /// </summary>
     public partial class MainMenuPageForTrainer : Page
     {
+        public static List<Worker> workers { get; set; }
+        public static Worker loggedWorker;
+
         public MainMenuPageForTrainer()
         {
             InitializeComponent();
+            loggedWorker = DBConnection.loginedWorker;
+            UserTB.Text = DBConnection.loginedWorker.Surname.ToString() + " " + DBConnection.loginedWorker.Name.ToString() + " " + DBConnection.loginedWorker.Patronymic.ToString();
+            LoginTB.Text = DBConnection.loginedWorker.Login;
         }
 
         private void TimetableBTN_Click(object sender, RoutedEventArgs e)

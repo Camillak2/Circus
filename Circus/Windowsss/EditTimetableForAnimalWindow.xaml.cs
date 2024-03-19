@@ -93,5 +93,10 @@ namespace Circus.Windowsss
                 MessageBox.Show("Произошла ошибка!");
             }
         }
+
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

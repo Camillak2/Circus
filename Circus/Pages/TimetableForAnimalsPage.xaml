@@ -54,7 +54,10 @@
                         <GridViewColumn Header ="Имя" Width="200">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Name}"/>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding AnimalType.Type}"/>
+                                        <TextBlock Text="{Binding Animal.Name}"/>
+                                    </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

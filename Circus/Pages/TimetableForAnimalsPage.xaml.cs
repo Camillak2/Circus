@@ -24,6 +24,7 @@ namespace Circus.Pages
     {
         public static List<TimetableForAnimal> timetableForAnimals { get; set; }
         public static List<Animal> animals { get; set; }
+        public static List<AnimalType> animalTypes { get; set; }
         public static List<Status> statuses { get; set; }
         public static Animal animal { get; set; }
 
@@ -33,8 +34,9 @@ namespace Circus.Pages
         {
             InitializeComponent();
             loggedWorker = DBConnection.loginedWorker;
-            timetableForAnimals = DBConnection.circusDB.TimetableForAnimal.Where(i => i.ID_Animal == animal.ID && animal.ID_Trainer == loggedWorker.ID).ToList();
             statuses = DBConnection.circusDB.Status.ToList();
+            timetableForAnimals = DBConnection.circusDB.TimetableForAnimal.ToList();
+            animalTypes = DBConnection.circusDB.AnimalType.ToList();
             this.DataContext = this;
             Refresh();
         }
