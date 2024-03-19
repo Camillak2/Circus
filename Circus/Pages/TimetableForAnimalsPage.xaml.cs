@@ -51,10 +51,10 @@ namespace Circus.Pages
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (TimetablesLV.SelectedItem is TimetableForAnimalsPage timetableForAnimalsPage)
+            if (TimetablesLV.SelectedItem is TimetableForAnimal timetableForAnimals)
             {
                 DBConnection.selectedForEditTimetableForAnimal = TimetablesLV.SelectedItem as TimetableForAnimal;
-                EditTimetableForAnimalWindow editTimetableForAnimalWindow = new EditTimetableForAnimalWindow(timetableForAnimalsPage);
+                EditTimetableForAnimalWindow editTimetableForAnimalWindow = new EditTimetableForAnimalWindow(timetableForAnimals);
                 editTimetableForAnimalWindow.ShowDialog();
             }
             else if (TimetablesLV.SelectedItem is null)
@@ -72,9 +72,9 @@ namespace Circus.Pages
 
         private void DeleteBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (TimetablesLV.SelectedItem is Worker worker)
+            if (TimetablesLV.SelectedItem is TimetableForAnimal timetableForAnimals)
             {
-                DBConnection.circusDB.Worker.Remove(worker);
+                DBConnection.circusDB.TimetableForAnimal.Remove(timetableForAnimals);
                 DBConnection.circusDB.SaveChanges();
             }
             else if (TimetablesLV.SelectedItem is null)
