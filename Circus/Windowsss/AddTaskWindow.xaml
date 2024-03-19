@@ -34,19 +34,19 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="3"
+        <TextBlock Grid.Row="2"
             Grid.ColumnSpan="2"
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Text="Персонал"/>
         <ComboBox x:Name="StaffCB"
-            Grid.Row="3"
+            Grid.Row="2"
             Grid.Column="3"
-            Grid.ColumnSpan="5"
-            Width="400"
-            Height="40"
-            HorizontalAlignment="Left"
+            Grid.ColumnSpan="6"
+            Width="470"
+            Height="38"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
             ItemsSource="{Binding staffs}">
             <ComboBox.ItemTemplate>
@@ -69,24 +69,23 @@
         <TextBox x:Name="DescriptionTB"
             Grid.Row="1"
             Grid.Column="3"
-            Grid.RowSpan="2"
-            Grid.ColumnSpan="3"
-            Width="230"
-            Height="100"
-            HorizontalAlignment="Left"
+            Grid.ColumnSpan="6"
+            Width="470"
+            Height="38"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"/>
         <TextBlock Text="Статус"
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="1"
             Grid.ColumnSpan="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"/>
         <ComboBox x:Name="StatusCB"
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="3"
             Grid.ColumnSpan="3"
             Width="230"
-            Height="40"
+            Height="38"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             ItemsSource="{Binding statuses}">
@@ -99,17 +98,14 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <TextBlock
-            Grid.Row="1"
-            Grid.RowSpan="2"
-            Grid.Column="6"
-            Grid.ColumnSpan="2"
+            Grid.Row="4"
+            Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="Дата&#xA;Время"/>
-        <DatePicker x:Name="DateTimeDP"
-            Grid.Row="1"
-            Grid.RowSpan="2"
-            Grid.Column="7"
+            Text="Дата"/>
+        <DatePicker x:Name="DateDP"
+            Grid.Row="4"
+            Grid.Column="3"
             Grid.ColumnSpan="3"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"/>

@@ -57,9 +57,9 @@
             Height="40">
             <TextBlock
                 x:Name="UserTB"
-                Width="500"
+                Width="480"
                 Height="40"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Center"
                 VerticalAlignment="Center"/>
         </Border>
 
@@ -81,9 +81,9 @@
             Height="40">
             <TextBlock
                 x:Name="LoginTB"
-                Width="500"
+                Width="480"
                 Height="40"
-                HorizontalAlignment="Left"
+                HorizontalAlignment="Center"
                 VerticalAlignment="Center"/>
         </Border>
         <Button Content="Расписание"

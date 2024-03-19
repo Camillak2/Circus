@@ -57,9 +57,9 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding artists.Surname}"/>
-                                        <TextBlock Text="{Binding artists.Name}"/>
-                                        <TextBlock Text="{Binding artists.Patronymic}"/>
+                                        <TextBlock Text="{Binding Worker.Surname}"/>
+                                        <TextBlock Text="{Binding Worker.Name}"/>
+                                        <TextBlock Text="{Binding Worker.Patronymic}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -67,7 +67,7 @@
                         <GridViewColumn Header ="Представление" Width="200">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding perfomances.Name}"/>
+                                    <TextBlock Text="{Binding Perfomance.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -99,13 +99,25 @@
             Grid.Row="7"
             Grid.RowSpan="2"/>
         <ComboBox x:Name="ArtistCB"
-            FontSize="20"
-            Width="500"
-            Height="38"
+            Grid.Row="7"
             Grid.Column="2"
             Grid.ColumnSpan="4"
-            Grid.Row="7"
-            Grid.RowSpan="2"/>
+            Width="480"
+            Height="38"
+            HorizontalAlignment="Center"
+            Grid.RowSpan="2"
+            VerticalAlignment="Center"
+            ItemsSource="{Binding artists}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Surname}"/>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding Patronymic}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <Button x:Name="EditTimetableBTN"
             Content="Изменить"
             FontSize="20"

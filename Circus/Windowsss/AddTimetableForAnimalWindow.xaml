@@ -5,8 +5,147 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Circus.Windowsss"
         mc:Ignorable="d"
-        Title="AddTimetableForAnimalWindow" Height="450" Width="800">
+        Title="AddTimetableForAnimalWindow"
+        Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1"
+    Grid.ColumnSpan="2"
+    Grid.Column="1"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Center"
+    Text="Животное"/>
+        <ComboBox x:Name="AnimalCB"
+    Grid.Row="1"
+    Grid.Column="3"
+    Grid.ColumnSpan="5"
+    Width="380"
+    Height="40"
+    VerticalAlignment="Center"
+    ItemsSource="{Binding animals}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding AnimalType.Type}"/>
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Grid.Row="3"
+Grid.ColumnSpan="3"
+Grid.Column="1"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+Text="Описанание"/>
+        <TextBox x:Name="DescriptionTB"
+    Grid.Row="3"
+    Grid.Column="4"
+    Grid.ColumnSpan="6"
+    Width="470"
+    Height="40"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"/>
+        <TextBlock
+Grid.Row="2"
+Grid.Column="1"
+Grid.ColumnSpan="2"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+Text="Дата"/>
+        <Border CornerRadius="20"
+Background="#d4adaa"
+BorderBrush="#9a7673"
+BorderThickness="2"
+Grid.Column="3"
+Grid.ColumnSpan="3"
+Grid.Row="2"
+HorizontalAlignment="Center"
+VerticalAlignment="Center"
+Width="200"
+Height="38">
+            <DatePicker x:Name="DateDP"
+    Width="180"
+    Grid.Row="1"
+    Grid.Column="8"
+    Grid.ColumnSpan="2"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"/>
+        </Border>
+        <TextBlock
+Grid.Row="2"
+Grid.Column="6"
+Grid.ColumnSpan="2"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+Text="Время"/>
+        <TextBox x:Name="TimeTB"
+    Grid.Row="2"
+    Width="150"
+    Grid.Column="7"
+    Grid.ColumnSpan="3"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"/>
+        <TextBlock
+Grid.Row="4"
+Grid.Column="1"
+Grid.ColumnSpan="2"
+HorizontalAlignment="Left"
+VerticalAlignment="Center"
+Text="Статус"/>
+        <ComboBox x:Name="StatusCB"
+        Grid.Row="4"
+        Grid.Column="3"
+        Grid.ColumnSpan="3"
+        Width="230"
+        Height="40"
+        VerticalAlignment="Center"
+        ItemsSource="{Binding statuses}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button x:Name="AddBTN"
+    Content="Добавить"
+    Grid.Column="3"
+    Grid.ColumnSpan="4"
+    Grid.Row="6"
+    Width="230"
+    Height="38"
+    Click="AddBTN_Click"/>
+        <Button x:Name="BackBTN"      
+    Grid.Column="3"
+    Grid.Row="10"
+    Grid.ColumnSpan="4"
+    Width="200"
+    Content="Назад"
+    Height="38"
+    Click="BackBTN_Click"/>
     </Grid>
 </Window>

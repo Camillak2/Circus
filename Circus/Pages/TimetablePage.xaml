@@ -54,7 +54,7 @@
                         <GridViewColumn Header ="Представление" Width="400">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding perfomances.Name}"/>
+                                    <TextBlock Text="{Binding Perfomance.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

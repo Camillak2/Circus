@@ -39,10 +39,9 @@
         <TextBox x:Name="DescriptionTB"
             Grid.Row="1"
             Grid.Column="3"
-            Grid.RowSpan="2"
-            Grid.ColumnSpan="3"
-            Width="230"
-            Height="100"
+            Grid.ColumnSpan="6"
+            Width="470"
+            Height="38"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             IsReadOnly="True"/>
@@ -59,29 +58,30 @@
             Width="230"
             Height="40"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center">
+            VerticalAlignment="Center"
+            ItemsSource="{Binding statuses}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding statuses.Name}"/>
+                        <TextBlock Text="{Binding Name}"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
         <TextBlock
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.RowSpan="2"
-            Grid.Column="6"
+            Grid.Column="1"
             Grid.ColumnSpan="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Text="Дата&#xA;Время"/>
-        <DatePicker x:Name="DateTimeDP"
-            Grid.Row="1"
+        <DatePicker x:Name="DateDP"
+            Grid.Row="2"
             Grid.RowSpan="2"
-            Grid.Column="7"
+            Grid.Column="3"
             Grid.ColumnSpan="3"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
             IsEnabled="False"/>
         <Button x:Name="SaveBTN"

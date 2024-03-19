@@ -26,7 +26,9 @@ namespace Circus.Windowsss
     {
         public static List<Worker> workers { get; set; }
         public static List<Position> positions { get; set; }
+
         Worker contextWorker;
+
         public EditWorkerWindow(Worker worker)
         {
             InitializeComponent();
@@ -53,6 +55,7 @@ namespace Circus.Windowsss
                 PhotoWorker.Source = new BitmapImage(new Uri(contextWorker.Photo.ToString()));
             }
         }
+
         private void AddPhotoBTN_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog()
@@ -65,6 +68,7 @@ namespace Circus.Windowsss
                 PhotoWorker.Source = new BitmapImage(new Uri(openFileDialog.FileName));
             }
         }
+
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -91,7 +95,7 @@ namespace Circus.Windowsss
                     worker.Surname = SurnameTB.Text;
                     worker.Name = NameTB.Text;
                     worker.Patronymic = PatronymicTB.Text;
-                    //worker.DateOfBirth = DateOfBirthDP.SelectedDate;
+                    worker.DateOfBirth = DateOfBirthDP.SelectedDate;
                     worker.ID_Position = (PositionCB.SelectedItem as Position).ID;
                     worker.Phone = PhoneTB.Text;
                     worker.Login = LoginTB.Text;

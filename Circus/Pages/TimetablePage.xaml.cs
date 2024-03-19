@@ -23,14 +23,16 @@ namespace Circus.Pages
     {
         public static List<Timetable> timetables { get; set; }
         public static List<Perfomance> perfomances { get; set; }
-        public static Worker loggedWorker;
+
+        //Worker loggedWorker;
 
         public TimetablePage()
         {
             InitializeComponent();
-            loggedWorker = DBConnection.loginedWorker;
-            timetables = DBConnection.circusDB.Timetable.Where(i => i.ID_Artist == loggedWorker.ID).ToList();
+            //loggedWorker = DBConnection.loginedWorker;
+            timetables = DBConnection.circusDB.Timetable.Where(i => i.ID_Artist == DBConnection.loginedWorker.ID).ToList();
             perfomances = DBConnection.circusDB.Perfomance.ToList();
+
             this.DataContext = this;
         }
 

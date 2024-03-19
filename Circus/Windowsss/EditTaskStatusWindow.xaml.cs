@@ -20,15 +20,21 @@ namespace Circus.Windowsss
     /// </summary>
     public partial class EditTaskStatusWindow : Window
     {
-        public static Taskk taskk { get; set; }
         public static List<Taskk> tasks { get; set; }
         public static List<Status> statuses { get; set; }
-        public EditTaskStatusWindow()
+
+        Taskk contextTask;
+
+        public EditTaskStatusWindow(Taskk task)
         {
             InitializeComponent();
             tasks = DBConnection.circusDB.Taskk.ToList();
             statuses = DBConnection.circusDB.Status.ToList();
-            DescriptionTB.Text = taskk.Description;
+            contextTask = task;
+            DescriptionTB.Text = task.Description;
+            DateDP.SelectedDate = task.Date;
+
+            this.DataContext = this;
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
@@ -36,13 +42,14 @@ namespace Circus.Windowsss
             try
             {
                 StringBuilder error = new StringBuilder();
+                Taskk task = contextTask;
                 if (string.IsNullOrWhiteSpace(StatusCB.Text))
                 {
                     error.AppendLine("Заполните все поля!");
                 }
                 else
                 {
-                    taskk.ID_Done = (StatusCB.SelectedItem as Status).ID;
+                    task.ID_Done = (StatusCB.SelectedItem as Status).ID;
                     DBConnection.circusDB.SaveChanges();
 
                     StatusCB.Text = String.Empty;

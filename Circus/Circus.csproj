@@ -91,16 +91,7 @@
     <Compile Include="DB\Applicationn.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Cabinet.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
     <Compile Include="DB\Cage.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\CostumeDept.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\DressingRoom.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Gender.cs">
@@ -127,19 +118,7 @@
     <Compile Include="DB\PerfomanceType.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Perfomance_Report1.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Perfomance_Report2.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
     <Compile Include="DB\Position.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Report1.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\Report2.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\Status.cs">
@@ -398,6 +377,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB\Model2.Context.tt">

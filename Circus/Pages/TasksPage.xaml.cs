@@ -22,23 +22,43 @@ namespace Circus.Pages
     /// </summary>
     public partial class TasksPage : Page
     {
-        public static List<Taskk> tasks { get; set; }
         public static Taskk taskk { get; set; }
+        public static List<Taskk> tasks { get; set; }
         public static List<Status> statuses { get; set; }
-        public static Worker loggedWorker;
+
+        //Worker loggedWorker;
 
         public TasksPage()
         {
             InitializeComponent();
-            loggedWorker = DBConnection.loginedWorker;
-            tasks = DBConnection.circusDB.Taskk.Where(i => i.ID_ServiceStaff == loggedWorker.ID).ToList();
+            //loggedWorker = DBConnection.loginedWorker;
+            tasks = DBConnection.circusDB.Taskk.Where(i => i.ID_ServiceStaff == DBConnection.loginedWorker.ID).ToList();
             this.DataContext = this;
+        }
+
+        private void Refresh()
+        {
+            TasksLV.ItemsSource = DBConnection.circusDB.Taskk.ToList();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Refresh();
         }
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
         {
-            EditTaskStatusWindow editTaskStatusWindow = new EditTaskStatusWindow();
-            editTaskStatusWindow.Show();
+            if (TasksLV.SelectedItem is Taskk task)
+            {
+                DBConnection.selectedForEditTask = TasksLV.SelectedItem as Taskk;
+                EditTaskStatusWindow editTaskStatusWindow = new EditTaskStatusWindow(task);
+                editTaskStatusWindow.ShowDialog();
+            }
+            else if (TasksLV.SelectedItem is null)
+            {
+                MessageBox.Show("Выберите задачу!");
+            }
+            Refresh();
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)

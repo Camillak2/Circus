@@ -63,7 +63,7 @@
                         <GridViewColumn Header ="Тип" Width="50">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding AnimalType.Name}"/>
+                                    <TextBlock Text="{Binding AnimalType.Type}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -84,7 +84,7 @@
                         <GridViewColumn Header ="Пол" Width="50">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Gender}"/>
+                                    <TextBlock Text="{Binding Gender.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -106,9 +106,9 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding trainers.Surname}"/>
-                                        <TextBlock Text="{Binding trainers.Name}"/>
-                                        <TextBlock Text="{Binding trainers.Patronymic}"/>
+                                        <TextBlock Text="{Binding Worker.Surname}"/>
+                                        <TextBlock Text="{Binding Worker.Name}"/>
+                                        <TextBlock Text="{Binding Worker.Patronymic}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>

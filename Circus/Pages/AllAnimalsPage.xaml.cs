@@ -23,12 +23,17 @@ namespace Circus.Pages
     public partial class AllAnimalsPage : Page
     {
         public static List<Animal> animals { get; set; }
+        public static List<AnimalType> animalTypes { get; set; }
         public static List<Worker> trainers { get; set; }
+        public static List<Gender> genders { get; set; }
 
         public AllAnimalsPage()
         {
             InitializeComponent();
             animals = DBConnection.circusDB.Animal.ToList();
+            animalTypes = DBConnection.circusDB.AnimalType.ToList();
+            trainers = DBConnection.circusDB.Worker.ToList();
+            genders = DBConnection.circusDB.Gender.ToList();
             this.DataContext = this;
             Refresh();
         }
@@ -62,13 +67,14 @@ namespace Circus.Pages
         {
             AddAnimalWindow addAnimalWindow = new AddAnimalWindow();
             addAnimalWindow.ShowDialog();
+            Refresh();
         }
 
         private void DeleteAnimalBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (AnimalsLV.SelectedItem is Animal anim)
+            if (AnimalsLV.SelectedItem is Animal animal)
             {
-                DBConnection.circusDB.Animal.Remove(anim);
+                DBConnection.circusDB.Animal.Remove(animal);
                 DBConnection.circusDB.SaveChanges();
             }
             else if (AnimalsLV.SelectedItem is null)

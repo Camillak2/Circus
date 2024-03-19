@@ -32,21 +32,21 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="3"
+        <TextBlock Grid.Row="2"
             Grid.ColumnSpan="2"
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Text="Персонал"/>
         <ComboBox x:Name="StaffCB"
-            Grid.Row="3"
+            Grid.Row="2"
             Grid.Column="3"
-            Grid.ColumnSpan="5"
-            Width="400"
-            Height="40"
-            HorizontalAlignment="Center"
+            Grid.ColumnSpan="6"
+            Width="480"
+            Height="38"
+            HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            ItemsSource="{Binding trainers}">
+            ItemsSource="{Binding staffs}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -67,64 +67,62 @@
         <TextBox x:Name="DescriptionTB"
             Grid.Row="1"
             Grid.Column="3"
-            Grid.RowSpan="2"
-            Grid.ColumnSpan="3"
-            Width="230"
-            Height="100"
-            HorizontalAlignment="Center"
+            Grid.ColumnSpan="6"
+            Width="480"
+            Height="38"
+            HorizontalAlignment="Left"
             VerticalAlignment="Center"/>
         <TextBlock Text="Статус"
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="1"
             Grid.ColumnSpan="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"/>
         <ComboBox x:Name="StatusCB"
-            Grid.Row="4"
+            Grid.Row="3"
             Grid.Column="3"
             Grid.ColumnSpan="3"
             Width="230"
-            Height="40"
+            Height="38"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center">
+            VerticalAlignment="Center"
+            ItemsSource="{Binding statuses}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding statuses.Name}"/>
+                        <TextBlock Text="{Binding Name}"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
         <TextBlock
-            Grid.Row="1"
-            Grid.RowSpan="2"
-            Grid.Column="6"
+            Grid.Row="4"
+            Grid.Column="1"
             Grid.ColumnSpan="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Text="Дата&#xA;Время"/>
-        <DatePicker x:Name="DateTimeDP"
-            Grid.Row="1"
-            Grid.RowSpan="2"
-            Grid.Column="7"
+            Text="Дата"/>
+        <DatePicker x:Name="DateDP"
+            Grid.Row="4"
+            Grid.Column="3"
             Grid.ColumnSpan="3"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"/>
         <Button x:Name="SaveBTN"
-    Content="Добавить"
-    Grid.Column="3"
-    Grid.ColumnSpan="4"
-    Grid.Row="6"
-    Width="250"
-    Height="38"
-    Click="SaveBTN_Click"/>
+            Content="Сохранить"
+            Grid.Column="3"
+            Grid.ColumnSpan="4"
+            Grid.Row="6"
+            Width="250"
+            Height="38"
+            Click="SaveBTN_Click"/>
         <Button x:Name="BackBTN"      
-    Grid.Column="3"
-    Grid.Row="10"
-    Grid.ColumnSpan="4"
-    Width="200"
-    Content="Назад"
-    Height="38"
-    Click="BackBTN_Click"/>
+            Grid.Column="3"
+            Grid.Row="10"
+            Grid.ColumnSpan="4"
+            Width="200"
+            Content="Назад"
+            Height="38"
+            Click="BackBTN_Click"/>
     </Grid>
 </Window>

@@ -18,7 +18,6 @@ namespace Circus.DB
         public Worker()
         {
             this.Applicationn = new HashSet<Applicationn>();
-            this.Cabinet = new HashSet<Cabinet>();
             this.Taskk = new HashSet<Taskk>();
             this.Timetable = new HashSet<Timetable>();
         }
@@ -37,8 +36,6 @@ namespace Circus.DB
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Applicationn> Applicationn { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cabinet> Cabinet { get; set; }
         public virtual Position Position { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Taskk> Taskk { get; set; }

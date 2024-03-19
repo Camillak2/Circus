@@ -144,21 +144,20 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
             <TextBlock
-        Grid.Row="2"
-        Grid.Column="5"
-        Grid.ColumnSpan="2"
-        HorizontalAlignment="Left"
-        VerticalAlignment="Center"
-        Text="Вкусовые&#xA;предпочтения"/>
+                Grid.Row="2"
+                Grid.Column="5"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Text="Вкусовые&#xA;предпочтения"/>
             <TextBox x:Name="FoodPreferenceTB"
-        Grid.Row="2"
-        Grid.Column="7"
-        Grid.RowSpan="2"
-        Grid.ColumnSpan="3"
-        Width="230"
-        Height="100"
-        HorizontalAlignment="Left"
-        VerticalAlignment="Center"/>
+                Grid.Row="2"
+                Grid.Column="7"
+                Grid.ColumnSpan="3"
+                Width="230"
+                Height="38"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"/>
             <TextBlock
         Grid.Row="4"
         Grid.Column="5"
@@ -169,10 +168,9 @@
             <TextBox x:Name="CareRecommendationsTB"
         Grid.Row="4"
         Grid.Column="7"
-        Grid.RowSpan="2"
         Grid.ColumnSpan="3"
         Width="230"
-        Height="100"
+        Height="38"
         HorizontalAlignment="Left"
         VerticalAlignment="Center"/>
             <Button x:Name="SaveBTN"

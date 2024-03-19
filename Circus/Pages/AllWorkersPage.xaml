@@ -86,7 +86,7 @@
                         <GridViewColumn Header ="Тип артиста" Width="70">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding typeOfArtists.Name}"/>
+                                    <TextBlock Text="{Binding TypeOfArtist.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

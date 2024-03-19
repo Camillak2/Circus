@@ -53,14 +53,14 @@
                         <GridViewColumn Header ="Описание" Width="550">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding DoneOrNo}"/>
+                                    <TextBlock Text="{Binding Description}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header ="Статус" Width="230">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding statuses.Name}"/>
+                                    <TextBlock Text="{Binding Status.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

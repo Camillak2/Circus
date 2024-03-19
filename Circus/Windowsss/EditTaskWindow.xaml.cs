@@ -20,12 +20,16 @@ namespace Circus.Windowsss
     /// </summary>
     public partial class EditTaskWindow : Window
     {
-        public static Taskk taskk { get; set; }
-        public static List<Worker> staffs { get; set; }
         public static List<Taskk> tasks { get; set; }
-        public EditTaskWindow(Taskk task)
+        public static List<Worker> staffs { get; set; }
+        public static List<Status> statuses { get; set; }
+
+        Taskk contextTask;
+
+        public EditTaskWindow(Taskk taskk)
         {
             InitializeComponent();
+            contextTask = taskk;
             InitializeDataInPage();
             this.DataContext = this;
         }
@@ -34,11 +38,12 @@ namespace Circus.Windowsss
         {
             tasks = DBConnection.circusDB.Taskk.ToList();
             staffs = DBConnection.circusDB.Worker.ToList();
+            statuses = DBConnection.circusDB.Status.ToList();
             this.DataContext = this;
-            DateTimeDP.Text = taskk.DateTime.ToString();
-            StaffCB.SelectedIndex = (int)taskk.ID_ServiceStaff - 1;
-            StatusCB.SelectedIndex = (int)taskk.ID_Done - 1;
-            DescriptionTB.Text = taskk.Description;
+            DateDP.Text = contextTask.Date.ToString();
+            StaffCB.SelectedIndex = (int)contextTask.ID_ServiceStaff - 1;
+            StatusCB.SelectedIndex = (int)contextTask.ID_Done - 1;
+            DescriptionTB.Text = contextTask.Description;
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
@@ -46,6 +51,7 @@ namespace Circus.Windowsss
             try
             {
                 StringBuilder error = new StringBuilder();
+                Taskk taskk = contextTask;
                 if (string.IsNullOrWhiteSpace(StaffCB.Text) ||
                     string.IsNullOrWhiteSpace(DescriptionTB.Text))
                 {
@@ -59,8 +65,8 @@ namespace Circus.Windowsss
                 {
                     taskk.Description = DescriptionTB.Text;
                     taskk.ID_ServiceStaff = (StaffCB.SelectedItem as Worker).ID;
-                    taskk.DateTime = DateTime.Now;
-                    taskk.DateTime = DateTimeDP.SelectedDate;
+                    taskk.ID_Done = (StatusCB.SelectedItem as Status).ID;
+                    taskk.Date = DateDP.SelectedDate;
                     DBConnection.circusDB.SaveChanges();
 
                     DescriptionTB.Text = String.Empty;

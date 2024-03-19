@@ -23,5 +23,15 @@ namespace Circus.Windowsss
         {
             InitializeComponent();
         }
+
+        private void AddBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

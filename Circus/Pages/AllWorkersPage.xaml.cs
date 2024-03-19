@@ -32,6 +32,7 @@ namespace Circus.Pages
             InitializeComponent();
             loggedWorker = DBConnection.loginedWorker;
             workers = DBConnection.circusDB.Worker.ToList();
+            typeOfArtists = DBConnection.circusDB.TypeOfArtist.ToList();
             this.DataContext = this;
             Refresh();
         }
@@ -65,6 +66,7 @@ namespace Circus.Pages
         {
             AddWorkerWindow addWorkerWindow = new AddWorkerWindow();
             addWorkerWindow.ShowDialog();
+            Refresh();
         }
 
         private void DeleteWorkerBTN_Click(object sender, RoutedEventArgs e)

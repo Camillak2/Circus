@@ -23,14 +23,17 @@ namespace Circus.Pages
     public partial class TimetableForAnimalsPage : Page
     {
         public static List<TimetableForAnimal> timetableForAnimals { get; set; }
+        public static List<Animal> animals { get; set; }
         public static List<Status> statuses { get; set; }
+        public static Animal animal { get; set; }
+
         public static Worker loggedWorker;
 
         public TimetableForAnimalsPage()
         {
             InitializeComponent();
             loggedWorker = DBConnection.loginedWorker;
-            timetableForAnimals = DBConnection.circusDB.TimetableForAnimal.ToList();
+            timetableForAnimals = DBConnection.circusDB.TimetableForAnimal.Where(i => i.ID_Animal == animal.ID && animal.ID_Trainer == loggedWorker.ID).ToList();
             statuses = DBConnection.circusDB.Status.ToList();
             this.DataContext = this;
             Refresh();
@@ -48,10 +51,10 @@ namespace Circus.Pages
 
         private void EditBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (TimetablesLV.SelectedItem is Worker worker)
+            if (TimetablesLV.SelectedItem is TimetableForAnimalsPage timetableForAnimalsPage)
             {
-                DBConnection.selectedForEditWorker = TimetablesLV.SelectedItem as Worker;
-                EditTimetableForAnimalWindow editTimetableForAnimalWindow = new EditTimetableForAnimalWindow();
+                DBConnection.selectedForEditTimetableForAnimal = TimetablesLV.SelectedItem as TimetableForAnimal;
+                EditTimetableForAnimalWindow editTimetableForAnimalWindow = new EditTimetableForAnimalWindow(timetableForAnimalsPage);
                 editTimetableForAnimalWindow.ShowDialog();
             }
             else if (TimetablesLV.SelectedItem is null)
@@ -69,9 +72,9 @@ namespace Circus.Pages
 
         private void DeleteBTN_Click(object sender, RoutedEventArgs e)
         {
-            if (TimetablesLV.SelectedItem is Worker work)
+            if (TimetablesLV.SelectedItem is Worker worker)
             {
-                DBConnection.circusDB.Worker.Remove(work);
+                DBConnection.circusDB.Worker.Remove(worker);
                 DBConnection.circusDB.SaveChanges();
             }
             else if (TimetablesLV.SelectedItem is null)

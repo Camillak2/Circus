@@ -49,13 +49,13 @@
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header ="Персонал" Width="300">
+                        <GridViewColumn Header ="Персонал" Width="300" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding staffs.Surname}"/>
-                                        <TextBlock Text="{Binding staffs.Name}"/>
-                                        <TextBlock Text="{Binding staffs.Patronymic}"/>
+                                        <TextBlock Text="{Binding Worker.Surname}"/>
+                                        <TextBlock Text="{Binding Worker.Name}"/>
+                                        <TextBlock Text="{Binding Worker.Patronymic}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -70,7 +70,7 @@
                         <GridViewColumn Header ="Статус" Width="130">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding statuses.Name}"/>
+                                    <TextBlock Text="{Binding Status.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

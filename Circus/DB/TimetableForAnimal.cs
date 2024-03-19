@@ -18,6 +18,8 @@ namespace Circus.DB
         public Nullable<int> ID_Animal { get; set; }
         public string Description { get; set; }
         public Nullable<int> ID_Status { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
+        public string Time { get; set; }
     
         public virtual Animal Animal { get; set; }
         public virtual Status Status { get; set; }

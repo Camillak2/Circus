@@ -24,6 +24,7 @@ namespace Circus.Windowsss
         public static List<Perfomance> perfomances { get; set; }
         public static Perfomance perfomance { get; set; }
         public static List<Timetable> timetables { get; set; }
+
         public static Timetable timetable = new Timetable();
 
         public AddTimetableWindow()
@@ -89,6 +90,5 @@ namespace Circus.Windowsss
         {
             Close();
         }
-
     }
 }

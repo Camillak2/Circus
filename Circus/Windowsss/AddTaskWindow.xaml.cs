@@ -23,6 +23,7 @@ namespace Circus.Windowsss
         public static List<Worker> staffs { get; set; }
         public static List<Taskk> tasks { get; set; }
         public static List<Status> statuses { get; set; }
+
         public static Taskk task = new Taskk();
 
         public AddTaskWindow()
@@ -31,6 +32,7 @@ namespace Circus.Windowsss
             staffs = DBConnection.circusDB.Worker.Where(i => i.ID_Position == 4).ToList();
             tasks = DBConnection.circusDB.Taskk.ToList();
             statuses = DBConnection.circusDB.Status.ToList();
+
             this.DataContext = this;
         }
 
@@ -39,7 +41,8 @@ namespace Circus.Windowsss
             try
             {
                 StringBuilder error = new StringBuilder();
-                if (string.IsNullOrWhiteSpace(StaffCB.Text) || string.IsNullOrWhiteSpace(DescriptionTB.Text) || string.IsNullOrWhiteSpace(StatusCB.Text))
+                if (string.IsNullOrWhiteSpace(StaffCB.Text) || string.IsNullOrWhiteSpace(DescriptionTB.Text) ||
+                    DateDP.SelectedDate == null || string.IsNullOrWhiteSpace(StatusCB.Text))
                 {
                     error.AppendLine("Заполните все поля!");
                 }
@@ -50,8 +53,7 @@ namespace Circus.Windowsss
                 else
                 {
                     task.Description = DescriptionTB.Text.Trim();
-                    task.DateTime = DateTime.Now;
-                    task.DateTime = DateTimeDP.SelectedDate;
+                    task.Date = DateDP.SelectedDate;
 
                     var a = StaffCB.SelectedItem as Worker;
                     task.ID_ServiceStaff = a.ID;
@@ -68,7 +70,6 @@ namespace Circus.Windowsss
             {
                 MessageBox.Show("Заполните все поля!");
             }
-            Close();
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)

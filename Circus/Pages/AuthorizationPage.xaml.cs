@@ -38,6 +38,7 @@ namespace Circus.Pages
                 workers = new List<Worker>(DBConnection.circusDB.Worker.ToList());
                 var currentWorker = workers.FirstOrDefault(i => i.Login.Trim() == login && i.Password.Trim() == password);
                 DBConnection.loginedWorker = currentWorker;
+
                 if (currentWorker != null && currentWorker.ID_Position == 1)
                 {
                     NavigationService.Navigate(new MainMenuPageForAdmin());

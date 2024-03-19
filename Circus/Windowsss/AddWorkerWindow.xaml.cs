@@ -24,6 +24,8 @@ namespace Circus.Windowsss
     {
         public static List<Worker> workers { get; set; }
         public static List<Position> positions { get; set; }
+        public static List<TypeOfArtist> typeOfArtists { get; set; }
+
         public static Worker worker = new Worker();
 
         public AddWorkerWindow()
@@ -31,6 +33,8 @@ namespace Circus.Windowsss
             InitializeComponent();
             workers = DBConnection.circusDB.Worker.ToList();
             positions = DBConnection.circusDB.Position.ToList();
+            typeOfArtists = DBConnection.circusDB.TypeOfArtist.ToList();
+
             this.DataContext = this;
         }
         private void AddWorkerBTN_Click(object sender, RoutedEventArgs e)
@@ -39,9 +43,9 @@ namespace Circus.Windowsss
             {
                 StringBuilder error = new StringBuilder();
                 if (string.IsNullOrWhiteSpace(SurnameTB.Text) || string.IsNullOrWhiteSpace(NameTB.Text) ||
-                    string.IsNullOrWhiteSpace(PatronymicTB.Text) ||
-                        DateOfBirthDP.SelectedDate == null || string.IsNullOrWhiteSpace(PhoneTB.Text) ||
-                        string.IsNullOrWhiteSpace(LoginTB.Text) || string.IsNullOrWhiteSpace(PasswordTB.Text))
+                    string.IsNullOrWhiteSpace(PatronymicTB.Text) || DateOfBirthDP.SelectedDate == null || 
+                    string.IsNullOrWhiteSpace(PhoneTB.Text) || string.IsNullOrWhiteSpace(LoginTB.Text) || 
+                    string.IsNullOrWhiteSpace(PasswordTB.Text))
                 {
                     error.AppendLine("Заполните все поля!");
                 }
@@ -62,8 +66,23 @@ namespace Circus.Windowsss
                     worker.DateOfBirth = DateOfBirthDP.SelectedDate;
                     worker.Login = LoginTB.Text.Trim();
                     worker.Password = PasswordTB.Text.Trim();
+                    worker.Password = PasswordTB.Text.Trim();
                     var a = PositionCB.SelectedItem as Position;
                     worker.ID_Position = a.ID;
+
+                    var b = TypeOfArtistCB.SelectedItem as TypeOfArtist;
+                    worker.ID_TypeOfArtist = b.ID;
+
+                    //if (PositionCB.SelectedIndex == 1)
+                    //{
+                    //    TypeOfArtistB.Visibility = Visibility.Visible;
+                    //    TypeOfArtistCB.Visibility = Visibility.Visible;
+                    //}
+                    //else
+                    //{
+                    //    TypeOfArtistB.Visibility = Visibility.Collapsed;
+                    //    TypeOfArtistCB.Visibility = Visibility.Collapsed;
+                    //}
 
                     DBConnection.circusDB.Worker.Add(worker);
                     DBConnection.circusDB.SaveChanges();
@@ -92,6 +111,23 @@ namespace Circus.Windowsss
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void PositionCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (PositionCB.SelectedIndex == 1)
+            {
+                TypeOfArtistB.Visibility = Visibility.Visible;
+                TypeOfArtistCB.Visibility = Visibility.Visible;
+
+                //var b = TypeOfArtistCB.SelectedItem as TypeOfArtist;
+                //worker.ID_TypeOfArtist = b.ID;
+            }
+            else
+            {
+                TypeOfArtistB.Visibility = Visibility.Collapsed;
+                TypeOfArtistCB.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

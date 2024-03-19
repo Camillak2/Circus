@@ -23,6 +23,7 @@ namespace Circus.Windowsss
     public partial class EditTimetableWindow : Window
     {
         public static List<Worker> artists { get; set; }
+        public static List<Perfomance> perfomances { get; set; }
         public static List<Timetable> timetables { get; set; }
 
         Timetable contextTimetable;
@@ -79,6 +80,17 @@ namespace Circus.Windowsss
             catch
             {
                 MessageBox.Show("Произошла ошибка!");
+            }
+        }
+
+        private void PerfomanceCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (PerfomanceCB.SelectedItem != null)
+            {
+                Perfomance selectedPerformance = PerfomanceCB.SelectedItem as Perfomance;
+                StartDateDP.SelectedDate = selectedPerformance.StartDate;
+
+                EndDateDP.SelectedDate = selectedPerformance.EndDate;
             }
         }
 

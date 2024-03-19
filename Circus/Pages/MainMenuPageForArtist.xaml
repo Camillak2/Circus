@@ -57,9 +57,9 @@
         Height="40">
             <TextBlock
         x:Name="UserTB"
-        Width="500"
+        Width="480"
         Height="40"
-        HorizontalAlignment="Left"
+        HorizontalAlignment="Center"
         VerticalAlignment="Center"/>
         </Border>
 
@@ -70,21 +70,21 @@
     HorizontalAlignment="Left"
     VerticalAlignment="Center"/>
         <Border CornerRadius="20"
-        Background="#d4adaa"
-        BorderBrush="#9a7673"
-        BorderThickness="2"
-        Grid.Column="2"
-        Grid.ColumnSpan="4"
-        Grid.Row="3"
-        Grid.RowSpan="2"
-        Width="500"
-        Height="40">
+            Background="#d4adaa"
+            BorderBrush="#9a7673"
+            BorderThickness="2"
+            Grid.Column="2"
+            Grid.ColumnSpan="4"
+            Grid.Row="3"
+            Grid.RowSpan="2"
+            Width="500"
+            Height="40">
             <TextBlock
-        x:Name="LoginTB"
-        Width="500"
-        Height="40"
-        HorizontalAlignment="Left"
-        VerticalAlignment="Center"/>
+                x:Name="LoginTB"
+                Width="480"
+                Height="40"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
         </Border>
         <Button Content="Расписание"
             x:Name="TimetableBTN"

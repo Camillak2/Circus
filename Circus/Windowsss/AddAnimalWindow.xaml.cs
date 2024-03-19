@@ -31,9 +31,9 @@ namespace Circus.Windowsss
             InitializeComponent();
             animals = DBConnection.circusDB.Animal.ToList();
             trainers = DBConnection.circusDB.Worker.Where(i => i.ID_Position == 3).ToList();
-
             animalTypes = DBConnection.circusDB.AnimalType.ToList();
             genders = DBConnection.circusDB.Gender.ToList();
+
             this.DataContext = this;
         }
 
@@ -43,8 +43,9 @@ namespace Circus.Windowsss
             {
                 StringBuilder error = new StringBuilder();
                 if (string.IsNullOrWhiteSpace(NameTB.Text) || string.IsNullOrWhiteSpace(AgeTB.Text) ||
-                    string.IsNullOrWhiteSpace(WeightTB.Text) || string.IsNullOrWhiteSpace(TrainerCB.Text) ||
-                        string.IsNullOrWhiteSpace(TypeCB.Text))
+                    string.IsNullOrWhiteSpace(WeightTB.Text) || string.IsNullOrWhiteSpace(TypeCB.Text) ||
+                    string.IsNullOrWhiteSpace(GenderCB.Text) ||  string.IsNullOrWhiteSpace(TrainerCB.Text) ||
+                    string.IsNullOrWhiteSpace(CareRecommendationsTB.Text) || string.IsNullOrWhiteSpace(FoodPreferenceTB.Text))
                 {
                     error.AppendLine("Заполните все поля!");
                 }
@@ -57,6 +58,8 @@ namespace Circus.Windowsss
                     animal.Name = NameTB.Text.Trim();
                     animal.Age = int.Parse(AgeTB.Text);
                     animal.Weight = int.Parse(WeightTB.Text);
+                    animal.FoodPreference = FoodPreferenceTB.Text.Trim();
+                    animal.CareRecommendations = CareRecommendationsTB.Text.Trim();
 
                     var a = TypeCB.SelectedItem as AnimalType;
                     animal.ID_Type = a.ID;

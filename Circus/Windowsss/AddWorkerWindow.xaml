@@ -107,28 +107,53 @@
     Grid.ColumnSpan="2"
     Text="Телефон"/>
         <TextBox x:Name="PhoneTB"
-    Grid.Row="2"
-    Grid.Column="10"
-    Grid.ColumnSpan="3"
-    Width="150"
-    Height="38"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"/>
+            Grid.Row="2"
+            Grid.Column="10"
+            Grid.ColumnSpan="3"
+            Width="150"
+            Height="38"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"/>
         <TextBlock Grid.Row="1"
-    Grid.Column="8"
-    HorizontalAlignment="Left"
-    Text="Должность"
-    Grid.ColumnSpan="2"
-    VerticalAlignment="Center"/>
+            Grid.Column="8"
+            HorizontalAlignment="Left"
+            Text="Должность"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Center"/>
         <ComboBox x:Name="PositionCB"
-    Grid.Row="1"
-    Grid.Column="10"
-    Grid.ColumnSpan="3"
-    Width="150"
-    Height="38"
-    HorizontalAlignment="Left"
-    VerticalAlignment="Center"
-    ItemsSource="{Binding positions}">
+            Grid.Row="1"
+            Grid.Column="10"
+            Grid.ColumnSpan="3"
+            Width="150"
+            Height="38"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            ItemsSource="{Binding positions}" SelectionChanged="PositionCB_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Grid.Row="5"
+            Grid.Column="6"
+            HorizontalAlignment="Left"
+            Text="Тип артиста"
+            Grid.ColumnSpan="4"
+            Visibility="Hidden"
+            x:Name="TypeOfArtistB"
+            VerticalAlignment="Center"/>
+        <ComboBox x:Name="TypeOfArtistCB"
+            Grid.Row="5"
+            Grid.Column="10"
+            Grid.ColumnSpan="3"
+            Width="150"
+            Height="38"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Visibility="Hidden"
+            ItemsSource="{Binding typeOfArtists}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}"/>

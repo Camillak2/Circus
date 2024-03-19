@@ -32,45 +32,43 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Расписание"
-        FontSize="40"
-        Margin="10"
-        Grid.Column="2"
-        Grid.Row="0"
-        Grid.ColumnSpan="2"
-        Grid.RowSpan="2"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"/>
+            FontSize="40"
+            Margin="10"
+            Grid.Column="2"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
         <ListView x:Name="TimetablesLV"
-        FontSize="20"
-        Grid.Column="0"
-        Grid.ColumnSpan="6"
-        Grid.Row="2"
-        Grid.RowSpan="6"
-        MaxHeight="500"
-        MaxWidth="780">
+            FontSize="20"
+            Grid.Column="0"
+            Grid.ColumnSpan="6"
+            Grid.Row="2"
+            Grid.RowSpan="6"
+            MaxHeight="500"
+            MaxWidth="780">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header ="Имя" Width="300">
+                        <GridViewColumn Header ="Имя" Width="200">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <StackPanel>
-                                        <TextBlock Text="{Binding Name}"/>
-                                    </StackPanel>
+                                    <TextBlock Text="{Binding Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Представление" Width="200">
+                        <GridViewColumn Header ="Описание" Width="200">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox IsChecked="{Binding IsSelected}"/>
+                                    <TextBlock Text="{Binding Description}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <GridViewColumn Header ="Дата" Width="160">
+                        <GridViewColumn Header ="Дата" Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Perfomance.Date, StringFormat = dd.MM.yyyy}"/>
+                                    <TextBlock Text="{Binding Date, StringFormat = dd.MM.yyyy}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -78,6 +76,13 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Time}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header ="Статус" Width="140">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Status.Name}"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

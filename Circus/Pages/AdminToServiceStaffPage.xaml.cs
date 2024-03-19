@@ -26,6 +26,7 @@ namespace Circus.Pages
         public static List<Taskk> tasks { get; set; }
         public static List<Status> statuses { get; set; }
         public static Worker loggedWorker;
+
         public AdminToServiceStaffPage()
         {
             InitializeComponent();
@@ -66,6 +67,7 @@ namespace Circus.Pages
         {
             AddTaskWindow addTaskWindow = new AddTaskWindow();
             addTaskWindow.ShowDialog();
+            Refresh();
         }
 
         private void DeleteTaskBTN_Click(object sender, RoutedEventArgs e)

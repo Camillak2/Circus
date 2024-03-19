@@ -23,6 +23,8 @@ namespace Circus.DB
 
         public static Timetable selectedForEditTimetable;
 
+        public static TimetableForAnimal selectedForEditTimetableForAnimal;
+
         public static Perfomance currentPerfomance;
     }
 }
