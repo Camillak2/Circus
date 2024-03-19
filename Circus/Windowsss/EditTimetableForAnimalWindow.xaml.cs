@@ -1,4 +1,5 @@
 ﻿using Circus.DB;
+using Circus.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,15 +78,11 @@ namespace Circus.Windowsss
                     timetableForAnimal.ID_Status = (StatusCB.SelectedItem as Status).ID;
                     DBConnection.circusDB.SaveChanges();
 
-                    SurnameTB.Text = String.Empty;
-                    NameTB.Text = String.Empty;
-                    PatronymicTB.Text = String.Empty;
-                    DateOfBirthDP = null;
-                    PositionCB.Text = String.Empty;
-                    PositionCB.Text = String.Empty;
-                    PhoneTB.Text = String.Empty;
-                    LoginTB.Text = String.Empty;
-                    PasswordTB.Text = String.Empty;
+                    DescriptionTB.Text = String.Empty;
+                    DescriptionTB.Text = String.Empty;
+                    DateDP = null;
+                    AnimalCB.Text = String.Empty;
+                    StatusCB.Text = String.Empty;
 
                     DBConnection.circusDB.SaveChanges();
                     Close();
