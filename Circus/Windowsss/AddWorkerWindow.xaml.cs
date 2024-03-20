@@ -70,19 +70,8 @@ namespace Circus.Windowsss
                     var a = PositionCB.SelectedItem as Position;
                     worker.ID_Position = a.ID;
 
-                    var b = TypeOfArtistCB.SelectedItem as TypeOfArtist;
-                    worker.ID_TypeOfArtist = b.ID;
-
-                    //if (PositionCB.SelectedIndex == 1)
-                    //{
-                    //    TypeOfArtistB.Visibility = Visibility.Visible;
-                    //    TypeOfArtistCB.Visibility = Visibility.Visible;
-                    //}
-                    //else
-                    //{
-                    //    TypeOfArtistB.Visibility = Visibility.Collapsed;
-                    //    TypeOfArtistCB.Visibility = Visibility.Collapsed;
-                    //}
+                    //var b = TypeOfArtistCB.SelectedItem as TypeOfArtist;
+                    //worker.ID_TypeOfArtist = b.ID;
 
                     DBConnection.circusDB.Worker.Add(worker);
                     DBConnection.circusDB.SaveChanges();

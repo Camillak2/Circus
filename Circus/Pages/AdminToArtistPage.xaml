@@ -90,7 +90,7 @@
             </ListView.View>
         </ListView>
         <TextBlock x:Name="ArtistTB"
-            Text="Арстист"
+            Text="Артист"
             Margin="10"
             Height="38"
             Grid.Column="1"

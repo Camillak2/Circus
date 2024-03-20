@@ -37,5 +37,6 @@ namespace Circus.DB
         public virtual ICollection<Cage> Cage { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TimetableForAnimal> TimetableForAnimal { get; set; }
+        public virtual Worker Worker { get; set; }
     }
 }

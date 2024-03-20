@@ -54,11 +54,10 @@ namespace Circus.Windowsss
         {
             try
             {
-                //StringBuilder error = new StringBuilder();
-                if (string.IsNullOrWhiteSpace(ArtistCB.Text) || string.IsNullOrWhiteSpace(PerfomanceCB.Text) || string.IsNullOrWhiteSpace(TimeTB.Text))
+                StringBuilder error = new StringBuilder();
+                if (ArtistCB.SelectedItem == null || string.IsNullOrWhiteSpace(PerfomanceCB.Text) || string.IsNullOrWhiteSpace(TimeTB.Text))
                 {
-                    //error.AppendLine("Заполните все поля!");
-                    MessageBox.Show("Заполните все поля!");
+                    error.AppendLine("Заполните все поля!");
                 }
                 else if (DateDP.SelectedDate < StartDateDP.SelectedDate || DateDP.SelectedDate > EndDateDP.SelectedDate)
                 {
@@ -70,9 +69,11 @@ namespace Circus.Windowsss
                     timetable.ID_Artist = a.ID;
 
                     var b = PerfomanceCB.SelectedItem as Perfomance;
-                    timetable.ID_Perfomance = a.ID;
+                    timetable.ID_Perfomance = b.ID;
 
                     timetable.Time = TimeTB.Text.Trim();
+
+                    timetable.Date = DateDP.SelectedDate;
 
                     DBConnection.circusDB.Timetable.Add(timetable);
                     DBConnection.circusDB.SaveChanges();
@@ -81,8 +82,7 @@ namespace Circus.Windowsss
             }
             catch
             {
-                MessageBox.Show("Заполните все поля!");
-                //e.Handled = true;
+                MessageBox.Show("Ошибка!");
             }
         }
 

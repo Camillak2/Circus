@@ -119,7 +119,7 @@
             HorizontalAlignment="Left"
             Text="Должность"
             Grid.ColumnSpan="2"
-            VerticalAlignment="Center"/>
+            VerticalAlignment="Center" Background="#FFFCEEED"/>
         <ComboBox x:Name="PositionCB"
             Grid.Row="1"
             Grid.Column="10"

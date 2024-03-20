@@ -27,7 +27,7 @@ namespace Circus.Windowsss
         public static List<Timetable> timetables { get; set; }
 
         Timetable contextTimetable;
-        Perfomance currentPerfomance;
+
         public EditTimetableWindow(Timetable timetable)
         {
             InitializeComponent();
@@ -39,14 +39,19 @@ namespace Circus.Windowsss
         private void InitializeDataInPage()
         {
             timetables = DBConnection.circusDB.Timetable.ToList();
+            perfomances = DBConnection.circusDB.Perfomance.ToList();
             artists = DBConnection.circusDB.Worker.Where(i => i.ID_Position == 2).ToList();
             this.DataContext = this;
             ArtistCB.SelectedIndex = (int)contextTimetable.ID_Artist - 1;
             PerfomanceCB.SelectedIndex = (int)contextTimetable.ID_Perfomance - 1;
 
-            timetables = DBConnection.circusDB.Timetable.ToList();
-            //StartDateDP.SelectedDate = currentPerfomance.StartDate;
-            //EndDateDP.SelectedDate = currentPerfomance.EndDate;
+            TimeTB.Text = contextTimetable.Time;
+            DateDP.SelectedDate = contextTimetable.Date;
+
+            //Perfomance selectedPerformance = PerfomanceCB.SelectedItem as Perfomance;
+            //StartDateDP.SelectedDate = selectedPerformance.StartDate;
+
+            //EndDateDP.SelectedDate = selectedPerformance.EndDate;
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
@@ -66,12 +71,16 @@ namespace Circus.Windowsss
                 }
                 else
                 {
+                    timetable.Time = TimeTB.Text;
+                    timetable.Date = DateDP.SelectedDate;
                     timetable.ID_Artist = (ArtistCB.SelectedItem as Worker).ID;
                     timetable.ID_Perfomance = (PerfomanceCB.SelectedItem as Perfomance).ID;
                     DBConnection.circusDB.SaveChanges();
 
                     ArtistCB.Text = String.Empty;
                     PerfomanceCB.Text = String.Empty;
+                    TimeTB.Text = String.Empty;
+                    DateDP.Text = String.Empty;
 
                     DBConnection.circusDB.SaveChanges();
                     Close();

@@ -43,8 +43,8 @@ namespace Circus.Windowsss
             {
                 StringBuilder error = new StringBuilder();
                 if (string.IsNullOrWhiteSpace(NameTB.Text) || string.IsNullOrWhiteSpace(AgeTB.Text) ||
-                    string.IsNullOrWhiteSpace(WeightTB.Text) || string.IsNullOrWhiteSpace(TypeCB.Text) ||
-                    string.IsNullOrWhiteSpace(GenderCB.Text) ||  string.IsNullOrWhiteSpace(TrainerCB.Text) ||
+                    string.IsNullOrWhiteSpace(WeightTB.Text) || TypeCB.SelectedItem == null ||
+                    GenderCB.SelectedItem == null || TrainerCB.SelectedItem == null ||
                     string.IsNullOrWhiteSpace(CareRecommendationsTB.Text) || string.IsNullOrWhiteSpace(FoodPreferenceTB.Text))
                 {
                     error.AppendLine("Заполните все поля!");
@@ -65,10 +65,10 @@ namespace Circus.Windowsss
                     animal.ID_Type = a.ID;
 
                     var b = TrainerCB.SelectedItem as Worker;
-                    animal.ID_Trainer = a.ID;
+                    animal.ID_Trainer = b.ID;
 
                     var c = GenderCB.SelectedItem as Gender;
-                    animal.ID_Gender = a.ID;
+                    animal.ID_Gender = c.ID;
 
                     DBConnection.circusDB.Animal.Add(animal);
                     DBConnection.circusDB.SaveChanges();
@@ -77,7 +77,7 @@ namespace Circus.Windowsss
             }
             catch
             {
-                MessageBox.Show("Заполните все поля!");
+                MessageBox.Show("Ощибка!");
             }
         }
 

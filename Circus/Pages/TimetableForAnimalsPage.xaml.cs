@@ -72,6 +72,7 @@ namespace Circus.Pages
         {
             AddTimetableForAnimalWindow addTimetableForAnimalWindow = new AddTimetableForAnimalWindow();
             addTimetableForAnimalWindow.ShowDialog();
+            Refresh();
         }
 
         private void DeleteBTN_Click(object sender, RoutedEventArgs e)

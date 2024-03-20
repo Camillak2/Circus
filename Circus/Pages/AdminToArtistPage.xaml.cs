@@ -34,17 +34,13 @@ namespace Circus.Pages
             timetables = DBConnection.circusDB.Timetable.ToList();
             perfomances = DBConnection.circusDB.Perfomance.ToList();
             this.DataContext = this;
+
             Refresh();
         }
 
         private void Refresh()
         {
             TimetablesLV.ItemsSource = DBConnection.circusDB.Timetable.ToList();
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            Refresh();
         }
 
         private void EditTimetableBTN_Click(object sender, RoutedEventArgs e)
@@ -66,6 +62,7 @@ namespace Circus.Pages
         {
             AddTimetableWindow addTimetableWindow = new AddTimetableWindow();
             addTimetableWindow.ShowDialog();
+            Refresh();
         }
 
         private void DeleteTimetableBTN_Click(object sender, RoutedEventArgs e)
@@ -85,7 +82,7 @@ namespace Circus.Pages
         private void ArtistCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var a = ArtistCB.SelectedItem as Worker;
-            TimetablesLV.ItemsSource = new List<Timetable>(DBConnection.circusDB.Timetable.Where(x => x.ID_Artist == a.ID).ToList());
+            TimetablesLV.ItemsSource = DBConnection.circusDB.Timetable.Where(x => x.ID_Artist == a.ID).ToList();
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)

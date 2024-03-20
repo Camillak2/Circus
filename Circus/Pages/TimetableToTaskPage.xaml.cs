@@ -36,6 +36,8 @@ namespace Circus.Pages
             artists = DBConnection.circusDB.Worker.ToList();
 
             this.DataContext = this;
+
+            Refresh();
         }
 
         private void Refresh()

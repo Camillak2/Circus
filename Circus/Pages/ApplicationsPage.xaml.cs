@@ -31,7 +31,7 @@ namespace Circus.Pages
         {
             InitializeComponent();
             loggedWorker = DBConnection.loginedWorker;
-            applicationns = DBConnection.circusDB.Applicationn.Where(i => i.ID_Artist == loggedWorker.ID).ToList();
+            applicationns = DBConnection.circusDB.Applicationn.ToList();
             statuses = DBConnection.circusDB.Status.ToList();
 
             Refresh();

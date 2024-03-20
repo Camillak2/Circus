@@ -47,8 +47,8 @@ namespace Circus.Windowsss
             {
                 StringBuilder error = new StringBuilder();
                 if (string.IsNullOrWhiteSpace(DescriptionTB.Text) || string.IsNullOrWhiteSpace(TimeTB.Text) ||
-                    string.IsNullOrWhiteSpace(AnimalCB.Text) || DateDP.SelectedDate == null ||
-                    string.IsNullOrWhiteSpace(StatusCB.Text))
+                    AnimalCB.SelectedItem == null || DateDP.SelectedDate == null ||
+                    StatusCB.SelectedItem == null)
                 {
                     error.AppendLine("Заполните все поля!");
                 }

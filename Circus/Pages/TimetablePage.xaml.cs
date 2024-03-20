@@ -30,7 +30,7 @@ namespace Circus.Pages
         {
             InitializeComponent();
             loggedWorker = DBConnection.loginedWorker;
-            timetables = DBConnection.circusDB.Timetable.Where(i => i.ID_Artist == loggedWorker.ID).ToList();
+            timetables = DBConnection.circusDB.Timetable.ToList();
             perfomances = DBConnection.circusDB.Perfomance.ToList();
 
             this.DataContext = this;

@@ -50,10 +50,10 @@ namespace Circus.Windowsss
             PositionCB.SelectedIndex = (int)contextWorker.ID_Position - 1;
             LoginTB.Text = contextWorker.Login;
             PasswordTB.Text = contextWorker.Password;
-            if (contextWorker.Photo != null)
-            {
-                PhotoWorker.Source = new BitmapImage(new Uri(contextWorker.Photo.ToString()));
-            }
+            //if (contextWorker.Photo != null)
+            //{
+            //    PhotoWorker.Source = new BitmapImage(new Uri(contextWorker.Photo.ToString()));
+            //}
         }
 
         private void AddPhotoBTN_Click(object sender, RoutedEventArgs e)
