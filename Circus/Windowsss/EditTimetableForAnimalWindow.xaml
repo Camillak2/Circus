@@ -42,13 +42,12 @@
             Grid.ColumnSpan="5"
             Width="380"
             Height="40"
-            VerticalAlignment="Center"
-            ItemsSource="{Binding animals}">
+            VerticalAlignment="Center">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock Text="{Binding AnimalType.Type}"/>
-                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding Animal.Name}"/>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>

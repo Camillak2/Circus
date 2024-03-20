@@ -38,13 +38,13 @@
     VerticalAlignment="Center"
     Text="Животное"/>
         <ComboBox x:Name="AnimalCB"
-    Grid.Row="1"
-    Grid.Column="3"
-    Grid.ColumnSpan="5"
-    Width="380"
-    Height="40"
-    VerticalAlignment="Center"
-    ItemsSource="{Binding animals}">
+            Grid.Row="1"
+            Grid.Column="3"
+            Grid.ColumnSpan="5"
+            Width="380"
+            Height="40"
+            VerticalAlignment="Center"
+            ItemsSource="{Binding animals}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

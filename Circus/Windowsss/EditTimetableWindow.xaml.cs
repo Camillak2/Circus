@@ -45,8 +45,8 @@ namespace Circus.Windowsss
             PerfomanceCB.SelectedIndex = (int)contextTimetable.ID_Perfomance - 1;
 
             timetables = DBConnection.circusDB.Timetable.ToList();
-            StartDateDP.SelectedDate = currentPerfomance.StartDate;
-            EndDateDP.SelectedDate = currentPerfomance.EndDate;
+            //StartDateDP.SelectedDate = currentPerfomance.StartDate;
+            //EndDateDP.SelectedDate = currentPerfomance.EndDate;
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)

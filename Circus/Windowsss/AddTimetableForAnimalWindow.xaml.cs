@@ -27,11 +27,14 @@ namespace Circus.Windowsss
 
         public static TimetableForAnimal timetableForAnimal = new TimetableForAnimal();
 
+        Worker loggedWorker;
+
         public AddTimetableForAnimalWindow()
         {
             InitializeComponent();
+            loggedWorker = DBConnection.loginedWorker;
             timetableForAnimals = DBConnection.circusDB.TimetableForAnimal.ToList();
-            animals = DBConnection.circusDB.Animal.ToList();
+            animals = DBConnection.circusDB.Animal.Where(i => i.ID_Trainer == loggedWorker.ID).ToList();
             statuses = DBConnection.circusDB.Status.ToList();
             animalTypes = DBConnection.circusDB.AnimalType.ToList();
 

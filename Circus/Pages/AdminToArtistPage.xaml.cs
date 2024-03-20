@@ -92,5 +92,10 @@ namespace Circus.Pages
         {
             NavigationService.Navigate(new MainMenuPageForAdmin());
         }
+
+        private void ApplicationsBTN_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new TimetableToTaskPage());
+        }
     }
 }

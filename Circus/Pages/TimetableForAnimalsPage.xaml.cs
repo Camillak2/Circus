@@ -28,22 +28,24 @@ namespace Circus.Pages
         public static List<Status> statuses { get; set; }
         public static Animal animal { get; set; }
 
-        public static Worker loggedWorker;
+        Worker loggedWorker;
 
         public TimetableForAnimalsPage()
         {
             InitializeComponent();
             loggedWorker = DBConnection.loginedWorker;
+            animals = DBConnection.circusDB.Animal.ToList();
             statuses = DBConnection.circusDB.Status.ToList();
-            timetableForAnimals = DBConnection.circusDB.TimetableForAnimal.ToList();
+            timetableForAnimals = DBConnection.circusDB.TimetableForAnimal.Where(i => i.Animal.ID_Trainer == loggedWorker.ID).ToList();
             animalTypes = DBConnection.circusDB.AnimalType.ToList();
             this.DataContext = this;
+
             Refresh();
         }
 
         private void Refresh()
         {
-            TimetablesLV.ItemsSource = DBConnection.circusDB.Worker.ToList();
+            TimetablesLV.ItemsSource = DBConnection.circusDB.TimetableForAnimal.Where(i => i.Animal.ID_Trainer == loggedWorker.ID).ToList();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

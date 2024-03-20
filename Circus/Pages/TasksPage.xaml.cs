@@ -26,19 +26,20 @@ namespace Circus.Pages
         public static List<Taskk> tasks { get; set; }
         public static List<Status> statuses { get; set; }
 
-        //Worker loggedWorker;
+        Worker loggedWorker;
 
         public TasksPage()
         {
             InitializeComponent();
-            //loggedWorker = DBConnection.loginedWorker;
-            tasks = DBConnection.circusDB.Taskk.Where(i => i.ID_ServiceStaff == DBConnection.loginedWorker.ID).ToList();
+            loggedWorker = DBConnection.loginedWorker;
+            tasks = DBConnection.circusDB.Taskk.ToList();
             this.DataContext = this;
+            Refresh();
         }
 
         private void Refresh()
         {
-            TasksLV.ItemsSource = DBConnection.circusDB.Taskk.ToList();
+            TasksLV.ItemsSource = DBConnection.circusDB.Taskk.Where(i => i.ID_ServiceStaff == loggedWorker.ID).ToList();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

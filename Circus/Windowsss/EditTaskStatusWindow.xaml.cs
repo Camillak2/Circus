@@ -32,6 +32,7 @@ namespace Circus.Windowsss
             statuses = DBConnection.circusDB.Status.ToList();
             contextTask = task;
             DescriptionTB.Text = task.Description;
+            StatusCB.SelectedIndex = (int)contextTask.ID_Done - 1;
             DateDP.SelectedDate = task.Date;
 
             this.DataContext = this;

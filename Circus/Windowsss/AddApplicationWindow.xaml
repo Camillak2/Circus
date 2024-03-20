@@ -7,6 +7,77 @@
         mc:Ignorable="d"
         Title="AddApplicationWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+            Grid.ColumnSpan="4"
+            Grid.Column="3"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Text="Создание заявки"/>
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Text="Описание"/>
+        <TextBox x:Name="DescriptionTB"
+            Grid.Row="2"
+            Grid.Column="3"
+            Grid.ColumnSpan="6"
+            Width="470"
+            Height="38"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Text="Дата"/>
+        <DatePicker x:Name="DateDP"
+            Grid.Row="4"
+            Grid.Column="3"
+            Grid.ColumnSpan="3"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"/>
+        <Button x:Name="AddTaskBTN"
+            Content="Добавить"
+            Grid.Column="3"
+            Grid.ColumnSpan="4"
+            Grid.Row="6"
+            Width="230"
+            Height="38"
+            Click="AddTaskBTN_Click"/>
+        <Button x:Name="BackBTN"      
+            Grid.Column="3"
+            Grid.Row="10"
+            Grid.ColumnSpan="4"
+            Width="200"
+            Content="Назад"
+            Height="38"
+            Click="BackBTN_Click"/>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using Circus.Windowsss;
+﻿using Circus.DB;
+using Circus.Windowsss;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,15 +22,36 @@ namespace Circus.Pages
     /// </summary>
     public partial class ApplicationsPage : Page
     {
+        public static List<Applicationn> applicationns { get; set; }
+        public static List<Status> statuses { get; set; }
+
+        Worker loggedWorker;
+
         public ApplicationsPage()
         {
             InitializeComponent();
+            loggedWorker = DBConnection.loginedWorker;
+            applicationns = DBConnection.circusDB.Applicationn.Where(i => i.ID_Artist == loggedWorker.ID).ToList();
+            statuses = DBConnection.circusDB.Status.ToList();
+
+            Refresh();
         }
 
-        private void ApplicationBTN_Click(object sender, RoutedEventArgs e)
+        private void Refresh()
+        {
+            ApplicationsLV.ItemsSource = DBConnection.circusDB.Applicationn.Where(i => i.ID_Artist == loggedWorker.ID).ToList();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void AddBTN_Click(object sender, RoutedEventArgs e)
         {
             AddApplicationWindow addApplicationWindow = new AddApplicationWindow();
             addApplicationWindow.ShowDialog();
+            Refresh();
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
