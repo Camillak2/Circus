@@ -151,9 +151,6 @@
     <Compile Include="Pages\AllAnimalsPage.xaml.cs">
       <DependentUpon>AllAnimalsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AllReportsPage.xaml.cs">
-      <DependentUpon>AllReportsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\AllWorkersPage.xaml.cs">
       <DependentUpon>AllWorkersPage.xaml</DependentUpon>
     </Compile>
@@ -245,10 +242,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AllAnimalsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\AllReportsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
